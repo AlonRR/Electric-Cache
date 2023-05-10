@@ -41,8 +41,16 @@ div {
     color: #b5b5b5;
     z-index: -1;
 }
-.middleSection{
+
+.middleSection {
     position: relative;
+    margin-left: 10px;
+}
+
+.rightSection {
+    position: relative;
+    margin-left: 10px;
+
 }
 
 .setRecommended {
@@ -52,35 +60,48 @@ div {
 }
 
 .map {
-    position: relative;
+    /* position: relative; */
     z-index: -1;
     margin-top: 10px;
     margin-left: 10px;
     width: 340;
     height: 390px;
 }
-.TLVbusDepot
-{
-    z-index: -2;
-    margin-top: 250px;
+
+.mapInnerWrap {
+    margin-left: 25px;
     margin-left: 10px;
+}
+
+.actualMap {
+position: relative;
+}
+
+#favorites {
+    margin-top: 20px;
+    position: absolute;
+}
+
+.TLVbusDepot {
+    z-index: -2;
+    margin-top: 60px;
 
 }
 
 .gridBattery {
-    left: 100px;
-    width: 510px;
+    padding-left: 10px;
+    width: 500px;
     height: 130px;
-    background-color: pink;
-
 }
 
 .predicion {
+    margin-top: 10px;
     width: 510px;
     height: 250px;
 }
 
 .savings {
+    margin-top: 10px;
     width: 510px;
     height: 260px;
 }
@@ -88,16 +109,18 @@ div {
 .howMuchCO2 {
     background-color: #d2d2d2;
     color: #51535b;
-    width:470px;
-    height:170px ;
+    width: 470px;
+    height: 170px;
 }
+
 .templates {
-    width:470px;
+    margin-top: 10px;
+    width: 470px;
     height: 440px;
 }
 
 .template {
-    width:440px;
+    width: 440px;
     height: 90px;
 }
 
@@ -108,9 +131,10 @@ div {
     height: 100px;
     width: 400px;
 }
-.customize{
+
+.customize {
     background-color: #ebebeb;
     color: black;
-    width:170px;     
+    width: 170px;
     height: 40px;
 }
