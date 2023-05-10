@@ -41,6 +41,9 @@ div {
     color: #b5b5b5;
     z-index: -1;
 }
+.middleSection{
+    position: relative;
+}
 
 .setRecommended {
     margin-left: 10px;
@@ -65,8 +68,10 @@ div {
 }
 
 .gridBattery {
+    left: 100px;
     width: 510px;
     height: 130px;
+    background-color: pink;
 
 }
 
