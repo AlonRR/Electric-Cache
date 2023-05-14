@@ -1,12 +1,159 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/tempStyleFile.css">
+    <script src="js/script.js"></script>
+    <link rel="icon" href="images/icon.ico">
+    <title>Template</title>
 </head>
+
 <body>
-    
+    <header class="container-fluid p-0">
+        <nav class="navbar navbar-expand-sm bg-body-tertiary">
+            <div class="container-fluid">
+                <ul class="navbar-nav align-items-end">
+                    <li class="nav-item">
+                        <a class="navbar-brand" href="index.html">
+                            <img src="images/logo94.png" alt="Electri-Cache" title="Electri-Cache"
+                                class="d-inline-block align-text-top">
+                            <h1 class="">
+                                Electri-Cache
+                            </h1>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <!-- <img src="images/Electric-Cache_Project_Home_Icon_1.png"
+                                alt="Electric-Cache_Project_Home_Icon_1.png"> -->
+                            <i class="bi bi-house-fill"></i>
+                            Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <!-- <img src="images/Electric-Cache_Project_Battery_Charging_Full_Icon_1.png"  alt="Electric-Cache_Project_Battery_Charging_Full_Icon_1.png" title="Electric-Cache_Project_Battery_Charging_Full_Icon_1.png"> -->
+                            <i class="bi bi-battery-charging"></i>
+                            Battery
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">
+                            <!-- <img src="images/Electric-Cache_Project_Poll_Icon_1.png" alt=""> -->
+                            <i class="bi bi-file-bar-graph-fill"></i>
+                            Stats
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">
+                            <!-- <img src="images/Electric-Cache_Project_List_Alt_Icon_1_selected.png" alt=""> -->
+                            <i class="bi bi-table"></i>
+                            Template
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="container p-0">
+        <div class="col h-100 d-inline-block">
+            <div class="row">
+                <div class="search-bar"></div>
+                <button class=""><!-- <img src="images/Electric-Cache_Project_Add_Circle_Icon_2.png" alt=""> -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                    </svg>
+                    New Template
+                </button>
+            </div>
+            <div class="row">
+                <div class="row">
+                    Night busses
+                    <div class="toggle"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <form action="">
+                <div class="col p-3">
+                    <label class="form-label" for="name">Name</label>
+                    <input class="form-control" type="text" name="name" placeholder="Template name here...">
+                    <!-- <title>Name</title> -->
+                    <div class="row">
+                        <label class="form-label col" for="battery-percent">Set grid battery level:</label>
+                        <input class="col form-control" type="number" name="battery-percent" id="battery-percent"
+                            min="0" max="100" pattern="[0-9]+" placeholder="Set percentage">
+                    </div>
+                    <div class="row">
+                        <label class="form-label col" for="start-time">Start</label>
+                        <input class="col form-control" type="time" name="start-time" id="start-time" pattern="[0-9]+"
+                            placeholder="Set a time">
+                    </div>
+                    <div class="row">
+                        <label class="form-label col" for="end-time">End</label>
+                        <input class="col form-control" type="time" name="end-time" id="end-time" pattern="[0-9]+"
+                            placeholder="Set a time">
+                    </div>
+                    <div class="row">
+                        <label for="frequency">Repeat:</label>
+                        <select class="col form-select" name="frequency" id="frequency">
+                            <option value="daily">Daily</option>
+                            <option value="weekly">Weekly</option>
+                            <option value="monthly">Monthly</option>
+                        </select>
+                    </div>
+                    <div class="row p-3">
+                        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                            <input type="checkbox" class="btn-check" id="btn-sun" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="btn-sun">Sun</label>
+                            <input type="checkbox" class="btn-check" id="btn-mon" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="btn-mon">Mon</label>
+                            <input type="checkbox" class="btn-check" id="btn-tue" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="btn-tue">Tue</label>
+                            <input type="checkbox" class="btn-check" id="btn-wed" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="btn-wed">Wed</label>
+                            <input type="checkbox" class="btn-check" id="btn-thu" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="btn-thu">Thu</label>
+                            <input type="checkbox" class="btn-check" id="btn-fri" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="btn-fri">Fri</label>
+                            <input type="checkbox" class="btn-check" id="btn-sat" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="btn-sat">Sat</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col p-3">
+                    <div class="row">
+                        <label for="vehicles">Vehicles</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" name="vehicles[]" type="checkbox" id="442-334-120"
+                            value="442-334-120">
+                        <i class="bi bi-car-front-fill"></i>
+                        <label class="form-check-label" for="442-334-120">442-334-120</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" name="vehicles[]" type="checkbox" id="393-233-687"
+                            value="393-233-687">
+                        <i class="bi bi-car-front-fill"></i>
+                        <label class="form-check-label" for="393-233-687">393-233-687</label>
+                    </div>
+                    <div class="form-check">
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
