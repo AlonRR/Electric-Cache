@@ -1,22 +1,56 @@
-const xValues = [50,60,70,80,90,100,110,120,130,140,150];
-const yValues = [7,8,8,9,9,9,10,11,14,14,15];
-
-new Chart("myChart", {
+let ctx = document.getElementById("myChart").getContext("2d");
+let myChart = new Chart(ctx, {
   type: "line",
   data: {
-    labels: xValues,
-    datasets: [{
-      fill: false,
-      lineTension: 0,
-      backgroundColor: "rgba(0,0,255,1.0)",
-      borderColor: "rgba(0,0,255,0.1)",
-      data: yValues
-    }]
+    labels: [ 
+      "10:00",
+      "11:00",
+      "12:00",
+      "13:00",
+      "14:00",
+      "15:00",
+      "16:00",
+    ],
+    datasets: [
+      {
+        label: "work load",
+        data: [2, 9, 3, 17, 6, 3, 7],
+        backgroundColor: "rgb(197, 197, 197,0.5)",
+      },
+      {
+        label: "free hours",
+        data: [2, 2, 5, 5, 2, 1, 10],
+        backgroundColor: "rgb(245, 245, 245,0.7)",
+      },
+    ],
   },
-  options: {
-    legend: {display: false},
-    scales: {
-      yAxes: [{ticks: {min: 6, max:16}}],
+});
+var categories = ['Jan', 'Fab', 'Mar', 'Apr'];
+var values = [25, 50, 75, 100];
+
+// Get the canvas element
+var canvas = document.getElementById('barChart');
+Chart.defaults.global.defaultFontColor = "white";
+// Create the bar chart
+var barChart = new Chart(canvas, {
+    type: 'bar',
+    data: {
+        labels: categories,
+        datasets: [{
+            label: 'Money',
+            data: values,
+            backgroundColor: 'rgba(0, 123, 255, 0.5)',
+            borderColor: 'rgba(0, 120, 255, 9)',
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        },
+        responsive: true,
+        maintainAspectRatio: false
     }
-  }
 });
