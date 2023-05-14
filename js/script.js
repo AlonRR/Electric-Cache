@@ -28,29 +28,56 @@ let myChart = new Chart(ctx, {
 var categories = ['Jan', 'Fab', 'Mar', 'Apr'];
 var values = [25, 50, 75, 100];
 
-// Get the canvas element
-var canvas = document.getElementById('barChart');
-Chart.defaults.global.defaultFontColor = "white";
-// Create the bar chart
-var barChart = new Chart(canvas, {
-    type: 'bar',
-    data: {
-        labels: categories,
-        datasets: [{
-            label: 'Money',
-            data: values,
-            backgroundColor: 'rgba(0, 123, 255, 0.5)',
-            borderColor: 'rgba(0, 120, 255, 9)',
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true
+// // Get the canvas element
+// var canvas = document.getElementById('barChart');
+// Chart.defaults.global.defaultFontColor = "white";
+// // Create the bar chart
+// var barChart = new Chart(canvas, {
+//     type: 'bar',
+//     data: {
+//         labels: categories,
+//         datasets: [{
+//             label: 'Money',
+//             data: values,
+//             backgroundColor: 'rgba(0, 123, 255, 0.5)',
+//             borderColor: 'rgba(0, 120, 255, 9)',
+//             borderWidth: 1
+//         }]
+//     },
+//     options: {
+//         scales: {
+//             y: {
+//                 beginAtZero: true
+//             }
+//         },
+//         responsive: true,
+//         maintainAspectRatio: false
+//     }
+// });
+
+        // Get the canvas element
+        var canvas = document.getElementById('barChart');
+
+        // Create the bar chart
+        var barChart = new Chart(canvas, {
+            type: 'bar',
+            data: {
+                labels: categories,
+                datasets: [{
+                    label: 'Values',
+                    data: values,
+                    backgroundColor: 'rgba(0, 123, 255, 0.5)',
+                    borderColor: 'rgba(0, 123, 255, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                responsive: true,
+                maintainAspectRatio: false
             }
-        },
-        responsive: true,
-        maintainAspectRatio: false
-    }
-});
+        });

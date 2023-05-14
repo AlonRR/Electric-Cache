@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,20 +12,23 @@
     </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js"></script>
+    <link rel="icon" href="images/icon.ico">
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <title>Electric-Cache</title>
 </head>
 
-<body>
+<body class="body1">
 
-    <div class="container-fluid">
-        <header>
+    <div class="container-fluid div1">
+        <header class="header1">
+                <a class="logo" href="index.html">
+                    <a href="#" id="logo" title="logo"></a>
+                    <h1 class="h11">
+                        Electric-Cache
+                    </h1>
+                </a>
             <nav>
 
-                <a class="navbar-brand" href="index.html">
-                    <div class="logo"></div>
-                </a>
-                <div class="logo"></div>
                 <img src="images/Electric-Cache_Project_Home_Icon_1_selected.png" alt="home selected" width="30px"
                     height="30px">
                 <a href="#">
@@ -50,13 +51,13 @@
         </header>
 
 
-        <div class="row">
+        <div class="row div1">
 
             <main class="col-lg-12">
 
                 <section class="leftSection">
-                    <div class="setRecommended">
-                        <h1>&nbsp;Set Recommended</h1>
+                    <div class="setRecommended div1">
+                        <h2>&nbsp;Set Recommended</h2>
                         <button class="Toggle-off"></button>
                         <p>The "recommended button will initiate a prediction program that will set the time and
                             percentage for
@@ -64,16 +65,16 @@
                         </p>
                     </div>
 
-                    <div class="map">
-                        <div class="mapInnerWrap">
-                            <div class="actualMap">
+                    <div class="map div1">
+                        <div class="mapInnerWrap div1">
+                            <div class="actualMap div1">
                                 <iframe
                                     src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d79632.9857825174!2d34.797043743966626!3d32.07934504295723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1selectric%20charging%20stations%20israel!5e0!3m2!1sen!2sil!4v1683738554978!5m2!1sen!2sil"
                                     width="100%" height="200%" style="border:0;" allowfullscreen="" loading="lazy"
                                     referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                             <h2 id="favorites">Favorites</h2>
-                            <div class="TLVbusDepot">&nbsp;
+                            <div class="TLVbusDepot div1">&nbsp;
 
                                 <h3>&nbsp;TLV bus depot</h3>
                                 <h4>&nbsp;23 HaDag, Tel-Aviv, Israel</h4>
@@ -83,35 +84,35 @@
                     </div>
                 </section>
                 <section class="middleSection">
-                    <div class="gridBattery">
+                    <div class="gridBattery div1">
                         <label class="switch">
                             <input type="checkbox">
                             <span class="slider round"></span>
                         </label>
-                        <h1>&nbsp;Grid Battery</h1><br>
+                        <h2>&nbsp;Grid Battery</h2><br>
                         <input type="Range" class="form-range" name="battery_percentage">
                     </div>
 
-                    <div class="prediction">
-                        <h1>Prediction</h1>
-                        <div class="predictionLeft">
+                    <div class="prediction div1">
+                        <h2>Prediction</h2>
+                        <div class="predictionLeft div1">
 
                             <h6>Approx.
-                                <h1 class="74">74</h1>
+                                <h2 class="74">74</h2>
                             </h6>
                             <h6>Gram CO2 today</h6>
                         </div>
-                        <div class="predicionRight">
-                            <div class="container">
-                                <div>
+                        <div class="predicionRight div1">
+                            <div class="container div1">
+                                <div class="div1">
                                     <canvas id="myChart"></canvas>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="savings">
-                        <h1>Savings</h1>
+                    <div class="savings div1">
+                        <h2>Savings</h2>
                         <canvas id="barChart"></canvas>
 
                     </div>
@@ -119,9 +120,9 @@
                 </section>
 
                 <section class="rightSection">
-                    <div class="howMuchCO2">
+                    <div class="howMuchCO2 div1">
                         <h5>&nbsp;How much CO2 is emmited?</h5>
-                        <h6>&nbsp;According to the SMMT New Car Report 2017, UK cars:</h6>
+                        <h6>According to the SMMT New Car Report 2017, UK cars:</h6>
                         <ul>
                             <li>Emmited 68.5 MtCO2e (Metric tons of carbon dioxide equivalent)" during 2016 - that's the
                                 same amount</li>
@@ -132,23 +133,36 @@
                         </ul>
 
                     </div>
-                    <div class="templates">
+                    <div class="templates div1">
                         <form class="d-flex" role="search">
-                            <input class="form-control me-2" type="search"
-                            placeholder="Search" aria-label="Search">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
-                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
-                              </svg><h6>Add Template</h6>
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                                class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                            </svg>&nbsp;<h6>&nbsp;Add Template</h6>
 
                         </form>
 
-                        <div class="template"></div>
+                        <div class="template">
+                            <h4>Night busses</h4>
+                            <h6>22:00 till 6:00 next day Daily</h6>
+                        </div>
 
-                        <div class="template"></div>
+                        <div class="template">
+                            <h4>Saturday off</h4>
+                            <h6>00:00 till 1:00 before Sunset Weekley Sat</h6>
+                        </div>
 
-                        <div class="template"></div>
+                        <div class="template">
+                            <h4>Friday off</h4>
+                            <h6>Sunset till day end Weekley Fri</h6>
+                        </div>
 
-                        <div class="template"></div>
+                        <div class="template">
+                            <h4>Reserve busses</h4>
+                            <h6>6:00 till 7:00 Daily</h6>
+                        </div>
                     </div>
                     <button class="customize"> <img src="images/Electric-Cache_Project_Create_Icon_1.png" alt="template"
                             width="12" height="12">
