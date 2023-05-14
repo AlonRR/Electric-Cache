@@ -15,76 +15,134 @@
 
 <body>
     <header>
-        <nav class="navBar">
-            <a href="#">Home</a>
-            <a href="#">Battery</a>
-            <a href="#">Stats</a>
-            <a href="#">Template</a>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">Home</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Battery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Stats</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Template</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
-    <aside></aside>
-    <main>
 
-        <section class="leftSection">
+    <div class="container-fluid">
+        <div class="row">
+            <aside class="col-lg-3"></aside>
 
-            <div class="setRecommended">
-                <h1>&nbsp;Set Recommended</h1>
-                <button class="Toggle-off"></button>
-                <p>The "recommended button will initiate
-                    a prediction program that will set the time
-                    and percentage for charging and discharging.
-                    This will help you save as much money
-                    and emmisions as possible."</p>
-            </div>
-            <div class="map">
-                <div class="mapInnerWrap">
-                    <div class="actualMap"> <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d79632.9857825174!2d34.797043743966626!3d32.07934504295723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1selectric%20charging%20stations%20israel!5e0!3m2!1sen!2sil!4v1683738554978!5m2!1sen!2sil"
-                            width="380" height="210" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-                    <h1 id="favorites">Favorites</h1>
-                    <div class="TLVbusDepot">
-                        &nbsp;
-                        <h3>&nbsp;&nbsp;TLV bus depot</h3>
-                        <h4>&nbsp;&nbsp; 23 HaDag, Tel-Aviv, Israel</h4>
-                        <button class="Arrow"></button>
+            <main class="col-lg-6">
+                <section class="leftSection">
+                    <div class="setRecommended">
+                        <h1>&nbsp;Set Recommended</h1>
+                        <button class="Toggle-off"></button>
+                        <p>The "recommended button will initiate a prediction program that will set the time and
+                            percentage for
+                            charging and discharging. This will help you save as much money and emissions as possible."
+                        </p>
+                    </div>
+
+                    <div class="map">
+                        <div class="mapInnerWrap">
+                            <div class="actualMap">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d79632.9857825174!2d34.797043743966626!3d32.07934504295723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1selectric%20charging%20stations%20israel!5e0!3m2!1sen!2sil!4v1683738554978!5m2!1sen!2sil"
+                                    width="100%" height="210" style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                            <h1 id="favorites">Favorites</h1>
+                            <div class="TLVbusDepot">
+
+                                <h3> TLV bus depot</h3>
+                                <h4> 23 HaDag, Tel-Aviv, Israel</h4>
+                                <button class="Arrow"></button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="middleSection">
+                    <div class="gridBattery" class>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                        <h1>&nbsp;Grid Battery</h1><br>
+                        <input type="Range" class="form-range" name="battery_percentage">
+                    </div>
+
+                    <div class="prediction">
+                        <h1>Prediction</h1>
+                        <h4>Approx.</h4>
+                        <h1>74</h1>
+                        <h4>Gram CO2 today</h4>
+                    </div>
+
+                    <div class="savings"></div>
+                </section>
+
+                <section class="rightSection">
+                    <div class="howMuchCO2"></div>
+                    <div class="templates">
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="template"></div>
+                            </div>
+                            <div class="col-6">
+                                <div class="template"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="template"></div>
+                            </div>
+                            <div class="col-6">
+                                <div class="template"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="customize"></button>
+                </section>
+            </main>
+
+            <footer class="col-lg-3"></footer>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-Wz0tgW8h9KvhTV8j1HfSwrI+U2BMQ57uIK2vWlu3XCdHH5+soXYV8sBKN7/lfnNM"
+            crossorigin="anonymous"></script>
+
+        <div class="modal fade" id="recommendedModal" tabindex="-1" aria-labelledby="recommendedModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="recommendedModalLabel">Set Recommended</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>The "recommended" button will initiate a prediction program that will set the time and
+                            percentage for charging and discharging. This will help you save as much money and emissions
+                            as possible.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save</button>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section class="middleSection">
-            <div class="gridBattery">
-               
-                <label class="switch">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                  </label>
-                <h1>&nbsp;Grid Battery</h1><br>
-                <input type="Range" class="form-range" name="battery_percentage">
-            </div>
-            <div class="predicion">
-                <h1>Prediction</h1>
-                <h4>Approx.</h4>
-                <h1>74</h1>
-                <h4>Gram CO2 today</h4>
-            </div>
-            <div class="savings"></div>
-        </section>
-
-        <section class="rightSection">
-
-            <div class="howMuchCO2"></div>
-            <div class="templates">
-                <div class="template"></div>
-                <div class="template"></div>
-                <div class="template"></div>
-                <div class="template"></div>
-            </div>
-            <button class="customize"></button>
-        </section>
-    </main>
-    <footer></footer>
+        </div>
 </body>
 
 </html>
