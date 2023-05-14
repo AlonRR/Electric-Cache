@@ -14,44 +14,47 @@
     <title>Template</title>
 </head>
 
-<body class="ms-0 me-0 p-0">
-    <header class="container p-3 ms-0 me-0 bg-body-tertiary mw-100">
+<body class="ms-0 me-0 p-0 bg-3b3b3b" id="template">
+    <header class="container p-3 ms-0 me-0 mw-100 bg-2b2b2b fw-300">
         <nav class="navbar navbar-expand-sm p-0">
             <div class="container p-0">
-                <ul class="navbar-nav align-items-end">
+                <ul class="navbar-nav align-items-end fw-300 fs-30">
                     <li class="nav-item">
                         <a class="row align-items-end navbar-brand" href="index.html">
-                            <img src="images/logo94.png" alt="Electri-Cache" title="Electri-Cache" class="col">
-                            <h1 class="col justify-content-end align-bottom p-0 mb-0">
+                            <div class="col logo94"></div>
+                            <h1 class="col display-5 justify-content-end align-bottom p-0 mb-0">
                                 Electri-Cache
                             </h1>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">
-                            <!-- <img src="images/Electric-Cache_Project_Home_Icon_1.png"
-                                alt="Electric-Cache_Project_Home_Icon_1.png"> -->
-                            <i class="bi bi-house-fill"></i>
-                            Home</a>
+                            <img src="images/Electric-Cache_Project_Home_Icon_1.png"
+                                alt="Electric-Cache_Project_Home_Icon_1.png">
+                            <!-- <i class="bi bi-house-fill"></i> -->
+                            Home
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">
-                            <!-- <img src="images/Electric-Cache_Project_Battery_Charging_Full_Icon_1.png"  alt="Electric-Cache_Project_Battery_Charging_Full_Icon_1.png" title="Electric-Cache_Project_Battery_Charging_Full_Icon_1.png"> -->
-                            <i class="bi bi-battery-charging"></i>
+                            <img src="images/Electric-Cache_Project_Battery_Charging_Full_Icon_1.png"
+                                alt="Electric-Cache_Project_Battery_Charging_Full_Icon_1.png"
+                                title="Electric-Cache_Project_Battery_Charging_Full_Icon_1.png">
+                            <!-- <i class="bi bi-battery-charging"></i> -->
                             Battery
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="">
-                            <!-- <img src="images/Electric-Cache_Project_Poll_Icon_1.png" alt=""> -->
-                            <i class="bi bi-file-bar-graph-fill"></i>
+                            <img src="images/Electric-Cache_Project_Poll_Icon_1.png" alt="">
+                            <!-- <i class="bi bi-file-bar-graph-fill"></i> -->
                             Stats
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">
-                            <!-- <img src="images/Electric-Cache_Project_List_Alt_Icon_1_selected.png" alt=""> -->
-                            <i class="bi bi-table"></i>
+                            <img src="images/Electric-Cache_Project_List_Alt_Icon_1_selected.png" alt="">
+                            <!-- <i class="bi bi-table"></i> -->
                             Template
                         </a>
                     </li>
@@ -59,14 +62,15 @@
             </div>
         </nav>
     </header>
-    <main class="container ms-0 me-0 mw-100">
-        <div class="row row-col-md-2">
-            <div class="col-md-4 h-100 d-inline-block">
+    <main class="container ms-0 me-0 mw-100 bg-4a4a4a">
+        <div class="row row-col-md-2 gy-1 ms-0 me-0 mw-100 mh-100">
+            <div class="col-md-4 ms-0 me-0 mw-100 mh-100 bg-777777-40">
                 <div class="row">
                     <form action="" class="col">
-                        <input class="search-bar col">
+                        <input class="search-bar col" placeholder="Template name">
                     </form>
-                    <button class="col"><!-- <img src="images/Electric-Cache_Project_Add_Circle_Icon_2.png" alt=""> -->
+                    <button class="col btn btn-primary">
+                        <!-- <img src="images/Electric-Cache_Project_Add_Circle_Icon_2.png" alt=""> -->
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
                             <path
@@ -75,17 +79,29 @@
                         New Template
                     </button>
                 </div>
-                <div class="row">
+                <div class="row bg-3b3b3b">
                     <div class="row">
-                        Night busses
-                        <div class="toggle"></div>
+                        <p class="col">Night busses</p>
+                        <div class="col form-check form-switch">
+                        </div>
+                        <small class="row ">22:00 till 6:00 next day Daily</small>
                     </div>
 
                 </div>
             </div>
-            <div class="col-md-8">
-                <form action="" class="row">
-                    <div class="col-md p-3">
+            <div class="col-md-8 ms-0 me-0 mw-100 mh-100 p-0">
+                <form action="" class="row ms-1 me-1 mw-100 mh-100">
+                    <div class="row row-col-2 ms-0 me-0 mw-100 mh-100 bg-2b2b2b">
+                        <button class="btn col ms-auto" type="submit" value="cancel">
+                            <i class="bi bi-x-circle-fill"></i>
+                            Cancel
+                        </button>
+                        <button class="btn col" type="submit" value="save">
+                            <i class="bi bi-car-front-fill"></i>
+                            Save
+                        </button>
+                    </div>
+                    <div class="col-xl-6 bg-4a4a4a">
                         <label class="form-label" for="name">Name</label>
                         <input class="form-control" type="text" name="name" placeholder="Template name here...">
                         <!-- <title>Name</title> -->
@@ -112,8 +128,8 @@
                                 <option value="monthly">Monthly</option>
                             </select>
                         </div>
-                        <div class="row p-3">
-                            <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                        <div class="row">
+                            <div class="btn-group col p-0" role="group" aria-label="Basic checkbox toggle button group">
                                 <input type="checkbox" class="btn-check" id="btn-sun" autocomplete="off">
                                 <label class="btn btn-outline-primary" for="btn-sun">Sun</label>
                                 <input type="checkbox" class="btn-check" id="btn-mon" autocomplete="off">
@@ -131,7 +147,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md p-3">
+                    <div class="col-xl-6 p-3 bg-4a4a4a">
                         <div class="row">
                             <label for="vehicles">Vehicles</label>
                         </div>
@@ -195,12 +211,6 @@
                             <i class="bi bi-bus-front-fill"></i>
                             <label class="form-check-label" for="238-494-655">238-494-655</label>
                         </div>
-                    </div>
-                    <div class="row">
-                        <button type="submit" >
-                            <i class="bi bi-car-front-fill"></i>
-                            Save
-                        </button>
                     </div>
                 </form>
             </div>
