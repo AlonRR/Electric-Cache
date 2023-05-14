@@ -1,0 +1,44 @@
+/* header {
+    background-color: #2B2B2B;
+} */
+.fw-300 {
+    font-weight: 300;
+}
+
+.fs-30 {
+    font-size: 30px;
+}
+
+.fs-38{
+    font-size: 38px;
+}
+
+.logo94 {
+    width: 94px;
+    height: 94px;
+    background-image: url(../images/logo94.png);
+}
+
+.bg-2b2b2b {
+    background-color: #2b2b2b;
+}
+
+.bg-4a4a4a {
+    background-color: #4a4a4a;
+}
+
+.bg-777777-40 {
+    background-color: #77777740;
+}
+
+.bg-3b3b3b {
+    background-color: #3b3b3b;
+}
+
+.btn-outline-primary {
+    --bs-btn-active-bg: #2196f3;
+    --bs-btn-active-border-color: #606060;
+    --bs-btn-focus-bg: #2196f3;
+    border: 0;
+    ;
+}
