@@ -7,44 +7,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.0/chart.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
     <title>Document</title>
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container">
-                <a class="navbar-brand" href="#">Home</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Battery</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Stats</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Template</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
+    
     <div class="container-fluid">
+        
         <div class="row">
-            <aside class="col-lg-3"></aside>
+            <header class="col-lg-12">
+                <nav>
+                    <a href="#">Home</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Battery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Stats</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Template</a>
+                    </li>
+                    </ul>
+        
+                </nav>
+            </header>
+            <main class="col-lg-12">
 
-            <main class="col-lg-6">
                 <section class="leftSection">
                     <div class="setRecommended">
                         <h1>&nbsp;Set Recommended</h1>
@@ -74,7 +65,7 @@
                     </div>
                 </section>
                 <section class="middleSection">
-                    <div class="gridBattery" class>
+                    <div class="gridBattery">
                         <label class="switch">
                             <input type="checkbox">
                             <span class="slider round"></span>
@@ -84,65 +75,81 @@
                     </div>
 
                     <div class="prediction">
+
                         <h1>Prediction</h1>
-                        <h4>Approx.</h4>
-                        <h1>74</h1>
-                        <h4>Gram CO2 today</h4>
+                        <h6>Approx.</h6>
+                        <h1 class="74">74</h1>
+                        <h6>Gram CO2 today</h6>
                     </div>
 
-                    <div class="savings"></div>
+                    <div class="savings">
+                        <h1>Savings</h1>
+                        <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+                        <script>
+                            const xValues = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150];
+                            const yValues = [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15];
+
+                            new Chart("myChart", {
+                                type: "line",
+                                data: {
+                                    labels: xValues,
+                                    datasets: [{
+                                        fill: false,
+                                        lineTension: 0,
+                                        backgroundColor: "rgba(0,0,255,1.0)",
+                                        borderColor: "rgba(0,0,255,0.1)",
+                                        data: yValues
+                                    }]
+                                },
+                                options: {
+                                    legend: { display: false },
+                                    scales: {
+                                        yAxes: [{ ticks: { min: 6, max: 16 } }],
+                                    }
+                                }
+                            });
+                        </script>
+                    </div>
                 </section>
 
                 <section class="rightSection">
-                    <div class="howMuchCO2"></div>
+                    <div class="howMuchCO2">
+                        <h5>&nbsp;How much CO2 is emmited?</h5>
+                        <h6>&nbsp;According to the SMMT New Car Report 2017, UK cars:</h6>
+                        <ul>
+                            <li>Emmited 68.5 MtCO2e (Metric tons of carbon dioxide equivalent)" during 2016 - that's the
+                                same amount</li>
+                            <li>The average new car amits 120.1g/km of CO2</li>
+                            <li>CO2 emmisions from cars has dropped by 8.9% between 2000 and 2015</li>
+                            <li>Total CO2 emmisions from all vehicles currently on the road has fallen by 4.6% between
+                                2000 - 2015</li>
+                        </ul>
+
+                    </div>
                     <div class="templates">
-                        <div class="row">
-                            <div class="col-8">
-                                <div class="template"></div>
-                            </div>
-                            <div class="col-6">
-                                <div class="template"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-6">
-                                <div class="template"></div>
-                            </div>
-                            <div class="col-6">
-                                <div class="template"></div>
-                            </div>
-                        </div>
+                        <!-- <div class="col-6"> -->
+                        <div class="template"></div><br>
+                        <!-- </div> -->
+                        <!-- <div class="col-6"> -->
+                        <div class="template"></div><br>
+                        <!-- </div> -->
+                        <!-- <div class="col-6"> -->
+                        <div class="template"></div><br>
+                        <!-- </div> -->
+                        <!-- <div class="col-6"> -->
+                        <div class="template"></div>
+                        <!-- </div> -->
                     </div>
-                    <button class="customize"></button>
+                    <button class="customize">Customize</button>
                 </section>
-            </main>
 
-            <footer class="col-lg-3"></footer>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-Wz0tgW8h9KvhTV8j1HfSwrI+U2BMQ57uIK2vWlu3XCdHH5+soXYV8sBKN7/lfnNM"
-            crossorigin="anonymous"></script>
-
-        <div class="modal fade" id="recommendedModal" tabindex="-1" aria-labelledby="recommendedModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="recommendedModalLabel">Set Recommended</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>The "recommended" button will initiate a prediction program that will set the time and
-                            percentage for charging and discharging. This will help you save as much money and emissions
-                            as possible.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Wz0tgW8h9KvhTV8j1HfSwrI+U2BMQ57uIK2vWlu3XCdHH5+soXYV8sBKN7/lfnNM"
+        crossorigin="anonymous"></script>
+    </main>
 </body>
 
 </html>
