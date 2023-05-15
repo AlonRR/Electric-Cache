@@ -18,7 +18,6 @@
 </head>
 
 <body class="body1">
-
     <div class="container-fluid div1">
         <header class="container p-3 ms-0 me-0 mw-100 bg-2b2b2b fw-300">
             <nav class="navbar navbar-expand p-0 w-100">
@@ -27,21 +26,21 @@
                         <li class="nav-item">
                             <a class="row align-items-end navbar-brand" href="index.html">
                                 <div class="col logo94"></div>
-                                <h1 class="col display-5 justify-content-end align-bottom p-0 mb-0">
+                                <h1 class="col display-5 justify-content-end align-bottom p-0 mb-0 text-white">
                                     Electri-Cache
                                 </h1>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">
-                                <img src="images/Electric-Cache_Project_Home_Icon_1.png"
+                            <a class="nav-link text-white" href="index.html"> <!-- Added class: text-white -->
+                                <img src="images/Electric-Cache_Project_Home_Icon_1_selected.png"
                                     alt="Electric-Cache_Project_Home_Icon_1.png">
                                 <!-- <i class="bi bi-house-fill"></i> -->
                                 Home
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link text-white" href="#"> <!-- Added class: text-white -->
                                 <img src="images/Electric-Cache_Project_Battery_Charging_Full_Icon_1.png"
                                     alt="Electric-Cache_Project_Battery_Charging_Full_Icon_1.png"
                                     title="Electric-Cache_Project_Battery_Charging_Full_Icon_1.png">
@@ -50,15 +49,16 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">
+                            <a class="nav-link text-white" href=""> <!-- Added class: text-white -->
                                 <img src="images/Electric-Cache_Project_Poll_Icon_1.png" alt="">
                                 <!-- <i class="bi bi-file-bar-graph-fill"></i> -->
                                 Stats
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">
-                                <img src="images/Electric-Cache_Project_List_Alt_Icon_1_selected.png" alt="">
+                            <a class="nav-link active text-white" aria-current="page" href="objectPage.html">
+                                <!-- Added class: text-white -->
+                                <img src="images/Electric-Cache_Project_List_Alt_Icon_1.png" alt="">
                                 <!-- <i class="bi bi-table"></i> -->
                                 Template
                             </a>
@@ -72,7 +72,7 @@
 
             <main class="col-lg-12 main1">
 
-                <section class="leftSectio  n">
+                <section class="leftSection">
                     <div class="setRecommended div1">
                         <div class="form-check form-switch setSwitch">
                             <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
@@ -86,6 +86,33 @@
                             This will help you save as much money and emissions as possible."
                         </p>
                     </div>
+
+                    <aside class="buttomSection">
+
+                            <div class="mapInnerWrap div1">
+                                <div class="actualMap div1">
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d79632.9857825174!2d34.797043743966626!3d32.07934504295723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1selectric%20charging%20stations%20israel!5e0!3m2!1sen!2sil!4v1683738554978!5m2!1sen!2sil"
+                                        width="100%" height="200%" style="border:0;" allowfullscreen="" loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                                <h2 id="favorites">Favorites</h2>
+                                <div class="TLVbusDepot div1">&nbsp;
+
+                                    <h3>&nbsp;TLV bus depot</h3>
+                                    <h4>&nbsp;&nbsp;23 HaDag, Tel-Aviv, Israel
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-sign-turn-slight-right-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M6.95.435c.58-.58 1.52-.58 2.1 0l6.515 6.516c.58.58.58 1.519 0 2.098L9.05 15.565c-.58.58-1.519.58-2.098 0L.435 9.05a1.482 1.482 0 0 1 0-2.098L6.95.435Zm1.385 6.547.8 1.386a.25.25 0 0 0 .451-.039l1.06-2.882a.25.25 0 0 0-.192-.333l-3.026-.523a.25.25 0 0 0-.26.371l.667 1.154-.621.373A2.5 2.5 0 0 0 6 8.632V11h1V8.632a1.5 1.5 0 0 1 .728-1.286l.607-.364Z" />
+                                        </svg>
+                                    </h4>
+
+                                </div>
+                        </div>
+
+                    </aside>
 
                     <div class="map div1">
                         <div class="mapInnerWrap div1">
