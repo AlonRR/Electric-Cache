@@ -131,27 +131,28 @@
                     </div>
                     <div class="col-xl-6 bg-4a4a4a">
                         <label class="form-label display-6" for="name">Name</label>
-                        <input class="form-control" type="text" name="name" placeholder="Template name here...">
+                        <input class="form-control" type="text" name="name" placeholder="Template name here..." required>
                         <!-- <title>Name</title> -->
                         <div class="row">
                             <div class="display-6 form-label">Time</div>
                             <label class="form-label col" for="battery-percent">Set grid battery level:</label>
                             <input class="col form-control" type="number" name="battery-percent" id="battery-percent"
-                                min="0" max="100" pattern="[0-9]+" placeholder="Set percentage">
+                                min="0" max="100" pattern="[0-9]+" placeholder="Set percentage" required>
                         </div>
                         <div class="row">
                             <label class="form-label col" for="start-time">Start</label>
                             <input class="col form-control" type="time" name="start-time" id="start-time"
-                                pattern="[0-9]+" placeholder="Set a time">
+                                pattern="[0-9]+" placeholder="Set a time" required>
                         </div>
                         <div class="row">
                             <label class="form-label col" for="end-time">End</label>
                             <input class="col form-control" type="time" name="end-time" id="end-time" pattern="[0-9]+"
-                                placeholder="Set a time">
+                                placeholder="Set a time" required>
                         </div>
                         <div class="row">
                             <label for="frequency">Repeat:</label>
-                            <select class="col form-select" name="frequency" id="frequency">
+                            <select class="col form-select" name="frequency" id="frequency" required>
+                                <option selected>Choose</option>
                                 <option value="daily">Daily</option>
                                 <option value="weekly">Weekly</option>
                                 <option value="monthly">Monthly</option>
