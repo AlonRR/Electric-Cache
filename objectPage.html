@@ -14,10 +14,10 @@
     <title>Template</title>
 </head>
 
-<body class="ms-0 me-0 p-0 bg-3b3b3b" id="template">
+<body class="ms-0 me-0 p-0 bg-3b3b3b templates-body">
     <header class="container p-3 ms-0 me-0 mw-100 bg-2b2b2b fw-300">
-        <nav class="navbar navbar-expand-sm p-0">
-            <div class="container p-0">
+        <nav class="navbar navbar-expand p-0 w-100">
+            <div class="row p-0">
                 <ul class="navbar-nav align-items-end fw-300 fs-30">
                     <li class="nav-item">
                         <a class="row align-items-end navbar-brand" href="index.html">
@@ -62,13 +62,11 @@
             </div>
         </nav>
     </header>
-    <main class="container ms-0 me-0 mw-100 bg-4a4a4a">
-        <div class="row row-col-md-2 gy-1 ms-0 me-0 mw-100 mh-100">
-            <div class="col-md-4 ms-0 me-0 mw-100 mh-100 bg-777777-40">
-                <div class="row">
-                    <form action="" class="col">
-                        <input class="search-bar col" placeholder="Template name">
-                    </form>
+    <main class="container h-100 p-0 mw-100 bg-4a4a4a">
+        <div class="row row-col-md-2 mw-100 mh-100">
+            <div class="col-md-4 mw-100 mh-100 p-1 bg-777777-40 templates-names">
+                <div class="row ">
+                    <input class="search-bar col-7" placeholder="Template name">
                     <button class="col btn btn-primary">
                         <!-- <img src="images/Electric-Cache_Project_Add_Circle_Icon_2.png" alt=""> -->
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -76,17 +74,52 @@
                             <path
                                 d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
                         </svg>
-                        New Template
+                        <small>
+                            New Template
+                        </small>
                     </button>
                 </div>
-                <div class="row bg-3b3b3b">
-                    <div class="row">
+                <div class="row gap-1">
+                    <div class="row bg-3b3b3b">
                         <p class="col">Night busses</p>
                         <div class="col form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="night_busses"
+                                title="toggle-switch">
                         </div>
-                        <small class="row ">22:00 till 6:00 next day Daily</small>
+                        <small class="row">22:00 till 6:00 next day Daily</small>
                     </div>
-
+                    <div class="row bg-3b3b3b">
+                        <p class="col">Saturday Off</p>
+                        <div class="col form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="saturday_off"
+                                title="toggle-switch">
+                        </div>
+                        <small class="row">00:00 till 1 hour before Sunset Weekly Sat</small>
+                    </div>
+                    <div class="row bg-3b3b3b">
+                        <p class="col">Friday Off</p>
+                        <div class="col form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="friday_off"
+                                title="toggle-switch">
+                        </div>
+                        <small class="row">Sunset till day end Weekly Fri</small>
+                    </div>
+                    <div class="row bg-3b3b3b">
+                        <p class="col">Reserve buses</p>
+                        <div class="col form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="reserve_busses"
+                                title="toggle-switch">
+                        </div>
+                        <small class="row">6:00 till 7:00 Daily</small>
+                    </div>
+                    <div class="row bg-3b3b3b">
+                        <p class="col">Parked Mon Wed</p>
+                        <div class="col form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="parked_mon_wed"
+                                title="toggle-switch">
+                        </div>
+                        <small class="row">9:00 till 17:00 Weekly Mon, Wed</small>
+                    </div>
                 </div>
             </div>
             <div class="col-md-8 ms-0 me-0 mw-100 mh-100 p-0">
