@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" type="text/css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript">
     </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js">
+    </script>
     <link rel="icon" href="images/icon.ico">
     <link rel="stylesheet" href="css/style.css">
     <title>Electric-Cache</title>
@@ -21,7 +21,7 @@
 
     <div class="container-fluid div1">
         <header class="container p-3 ms-0 me-0 mw-100 bg-2b2b2b fw-300">
-            <nav class="navbar navbar-expand-sm p-0">
+            <nav class="navbar navbar-expand-sm p-0 nav1">
                 <div class="container p-0">
                     <ul class="navbar-nav align-items-end fw-300 fs-30">
                         <li class="nav-item">
@@ -70,15 +70,20 @@
 
         <div class="row div1">
 
-            <main class="col-lg-12">
+            <main class="col-lg-12 main1">
 
-                <section class="leftSection">
+                <section class="leftSectio  n">
                     <div class="setRecommended div1">
+                        <div class="form-check form-switch setSwitch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                            <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+                        </div>
                         <h2>&nbsp;Set Recommended</h2>
-                        <button class="Toggle-off"></button>
-                        <p>The "recommended button will initiate a prediction program that will set the time and
-                            percentage for
-                            charging and discharging. This will help you save as much money and emissions as possible."
+                        <p>The "recommended button" will initiate<br>
+                            a prediction program that will
+                            set the time and percentage for<br>
+                            charging and discharging.<br>
+                            This will help you save as much money and emissions as possible."
                         </p>
                     </div>
 
@@ -94,18 +99,24 @@
                             <div class="TLVbusDepot div1">&nbsp;
 
                                 <h3>&nbsp;TLV bus depot</h3>
-                                <h4>&nbsp;23 HaDag, Tel-Aviv, Israel</h4>
-                                <button class="Arrow"></button>
+                                <h4>&nbsp;&nbsp;23 HaDag, Tel-Aviv, Israel
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-sign-turn-slight-right-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M6.95.435c.58-.58 1.52-.58 2.1 0l6.515 6.516c.58.58.58 1.519 0 2.098L9.05 15.565c-.58.58-1.519.58-2.098 0L.435 9.05a1.482 1.482 0 0 1 0-2.098L6.95.435Zm1.385 6.547.8 1.386a.25.25 0 0 0 .451-.039l1.06-2.882a.25.25 0 0 0-.192-.333l-3.026-.523a.25.25 0 0 0-.26.371l.667 1.154-.621.373A2.5 2.5 0 0 0 6 8.632V11h1V8.632a1.5 1.5 0 0 1 .728-1.286l.607-.364Z" />
+                                    </svg>
+                                </h4>
+
                             </div>
                         </div>
                     </div>
                 </section>
                 <section class="middleSection">
                     <div class="gridBattery div1">
-                        <label class="switch">
-                            <input type="checkbox">
-                            <span class="slider round"></span>
-                        </label>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                            <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+                        </div>
                         <h2>&nbsp;Grid Battery</h2><br>
                         <input type="Range" class="form-range" name="battery_percentage">
                     </div>
@@ -130,10 +141,8 @@
 
                     <div class="savings div1">
                         <h2>Savings</h2>
-                        <canvas id="barChart"></canvas>
-
+                        <canvas id="myChart2" width="900" height="400"></canvas>
                     </div>
-
                 </section>
 
                 <section class="rightSection">
@@ -151,7 +160,7 @@
 
                     </div>
                     <div class="templates div1">
-                        <form class="d-flex" role="search">
+                        <form class="d-flex" role="search" value="TemplateName">
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
                                 class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
@@ -162,21 +171,41 @@
                         </form>
 
                         <div class="template">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckDefault">
+                                <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+                            </div>
                             <h4>Night busses</h4>
                             <h6>22:00 till 6:00 next day Daily</h6>
                         </div>
 
                         <div class="template">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckDefault">
+                                <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+                            </div>
                             <h4>Saturday off</h4>
                             <h6>00:00 till 1:00 before Sunset Weekley Sat</h6>
                         </div>
 
                         <div class="template">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckDefault">
+                                <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+                            </div>
                             <h4>Friday off</h4>
                             <h6>Sunset till day end Weekley Fri</h6>
                         </div>
 
                         <div class="template">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckDefault">
+                                <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+                            </div>
                             <h4>Reserve busses</h4>
                             <h6>6:00 till 7:00 Daily</h6>
                         </div>
