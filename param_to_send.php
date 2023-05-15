@@ -17,10 +17,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     // Display the received values
     echo "Hello: " . $userName . "<br>";
     echo "battery-percent: " . $battery_percent ."<br>";
-    echo "start-time: " . $start_timet ."<br>";
+    echo "start-time: " . $start_time ."<br>";
     echo "end-time: " . $end_time ."<br>";
     echo "frequency: " . $frequency. "<br>";
-    echo "vehicles[]: " . $vehicles ."<br>";
+    // echo "vehicles[]: " . $vehicles ."<br>";
     
 }
 ?>
