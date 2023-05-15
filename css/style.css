@@ -142,7 +142,7 @@ main {
     margin: 0%;
 }
 
-#favorites {
+.favorites {
     margin-top: 5px;
     font-size: 156.25%;
     position: absolute;
