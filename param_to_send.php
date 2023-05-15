@@ -12,19 +12,21 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $start_time = $_GET["start-time"];
     $end_time = $_GET["end-time"];
     $frequency = $_GET["frequency"];
-    $vehicles = $_GET["vehicles[]"];
+    $vehicles = $_GET["vehicles"] ?? '000-000-000';
 
     // Display the received values
     echo "Hello: " . $userName . "<br>";
-    echo "battery-percent: " . $battery_percent ."<br>";
-    echo "start-time: " . $start_time ."<br>";
-    echo "end-time: " . $end_time ."<br>";
-    echo "frequency: " . $frequency. "<br>";
-    // echo "vehicles[]: " . $vehicles ."<br>";
-    
+    echo "Battery-percent: " . $battery_percent ."<br>";
+    echo "Start-time: " . $start_time ."<br>";
+    echo "End-time: " . $end_time ."<br>";
+    echo "Frequency: " . $frequency. "<br>";
+    echo "Vehicles: ";
+    foreach ($vehicles as $item): ?>
+        <li><?php echo $item; ?></li>
+    <?php endforeach; 
+
 }
 ?>
-
 
 </body>
 </html>

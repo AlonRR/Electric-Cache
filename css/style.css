@@ -19,7 +19,6 @@ main {
     width: 100%;
     height: 100%;
     position: relative;
-    z-index: -1;
 
 }
 
@@ -31,54 +30,24 @@ main {
 }
 
 .header1 {
-    /* width: 100%; */
+    width: 100%;
     display: flex;
     align-items: center;
-
-    /* justify-content: center; */
 }
 
-
-/* .widgets{
-    margin-top: 20px;
-    display: flex;
-    height: 100%;
-    width: 100%;
-    z-index: -2;
-} */
-
-
-.header1>.nav1 {
-    /* background-color: #2b2b2b; */
-    display: flex;
-    width: 100%;
-    height: 110px;
-}
 
 #logo {
     margin-left: 400px;
 }
 
-.logo {
-    background-color: #2b2b2b;
-    /* position: relative; */
-    /* display: flex; */
-    background-image: url("../images/logo94.png");
-    background-repeat: no-repeat;
-    /* display: block; */
-    background-size: contain;
-    height: 110px;
-    width: 800px;
-    /* justify-content: center; */
-    align-items: center;
 
+.userPic {
+    position: absolute;
+    width: 100px;
+    border-radius: 1000px;
+    margin-left: 93%;
 }
-.userPic{
-position: absolute;
-width: 100px;
-border-radius: 1000px;
-margin-left: 93%;
-}
+
 .howMuchCO2>h6 {
     margin-left: 10px;
     display: flex;
@@ -95,7 +64,6 @@ margin-left: 93%;
 .div1 {
     background-color: #535353;
     color: white;
-    /* z-index: -1; */
 }
 
 #myChart {
@@ -110,51 +78,34 @@ margin-left: 93%;
     font-size: 100px;
 }
 
-/* .predictionLeft>h6 {
-    font-size: 16;
-    font-weight: 200;
-} */
-
-
-
 .middleSection {
-    /* display: flex; */
     position: relative;
     margin-left: 10px;
     flex-grow: 2;
     width: 40%;
 }
-.templatesMobile{
+
+.templatesMobile {
     display: none;
 }
 
 .rightSection {
-    /* display: flex; */
-
-    z-index: 0;
     width: 35%;
     flex-grow: 1;
-    /* position: relative; */
     margin-left: 10px;
-    /* justify-content: center; */
-
 }
 
 .leftSection {
-    /* display: flex; */
-
     flex-grow: 1;
     width: 35%;
 }
 
-.buttomSection{
+.buttomSection {
     display: none;
 }
 
 .setRecommended {
     margin-left: 10px;
-    /* width: 60%; */
-    /* height: 260px; */
 }
 
 .setRecommended>p {
@@ -177,6 +128,18 @@ margin-left: 93%;
     display: flex;
     margin-top: 10px;
     width: 80%;
+}
+.container-fluid{
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0%;
+}
+.main1{
+    padding: 0;
+    margin: 0%;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0%;
 }
 
 #favorites {
@@ -221,12 +184,7 @@ margin-left: 93%;
 
 .setSwitch {
     position: relative;
-    margin-left: 20%;
-}
-
-.body1>.row {
-    /* justify-content: center; */
-    display: flex;
+    margin-left: 45%;
 }
 
 .row>.div1 {
@@ -241,6 +199,7 @@ margin-left: 93%;
 .predicion>h2 {
     margin-left: 10px;
     color: white;
+
 }
 
 #line-chart {
@@ -259,6 +218,12 @@ margin-left: 93%;
     color: white;
 
 
+}
+
+.body1 h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Rubik', sans-serif;
 }
 
 .howMuchCO2 {
@@ -296,7 +261,7 @@ margin-left: 93%;
     margin-top: 10px;
     width: 100%;
     background-color: #535353;
-    height: 500px;
+    /* height: 100%; */
 
 }
 
@@ -305,6 +270,7 @@ margin-left: 93%;
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 10px;
+
 }
 
 .template>h4 {
@@ -337,44 +303,18 @@ margin-left: 93%;
 
 .customize {
     margin-top: 20px;
+    margin-bottom: 10px;
     background-color: #ebebeb;
     color: black;
-    width: 170px;
+    width: 150px;
     height: 40px;
     border-radius: 7px;
 }
-.customize2{
+
+.customize2 {
     display: none;
 }
 
-
-/* #chart { 
-    width:200px; 
-    height:200px;
-    border: solid 1px white;
-} */
-
-/* .chart-container {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  .chart {
-    width: 100%;
-    height: 300px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-  }
-
-  .bar {
-    background-color: #2196F3;
-    transition: height 0.5s;
-  } */
 
 .body1>.container {
     width: 70%;
@@ -384,16 +324,6 @@ margin-left: 93%;
 .navbar {
     margin-left: 15px;
 }
-
-.body1>h2 {
-    text-align: center;
-    font-family: "Verdana", sans-serif;
-    font-size: 187.5%;
-    color: white;
-
-    font-weight: 100;
-}
-
 
 .fw-300 {
     font-weight: 300;
@@ -473,59 +403,90 @@ margin-left: 93%;
     .templates-names {
         display: none;
     }
+
     .body1 .gridBattery {
         display: none;
     }
-    .howMuchCO2{
+
+    .howMuchCO2 {
         display: none;
     }
-    .savings{
+
+    .savings {}
+
+    .prediction .div1 {
+        /* height: 20%; */
         display: none;
     }
-    .prediction .div1{
-        height: 20%;
+
+    .prediction>h2 {
+        display: none;
     }
-    .templatesMobile{
+
+    .row>main {
+        background-color: #3b3b3b;
+        width: 100%;
+        display: block;
+        position: relative;
+    }
+
+
+    .templatesMobile {
         margin-top: 10px;
         position: relative;
         display: block;
     }
-    .customize2{
+
+    .customize2 {
         display: block;
-    }
-    .customize{
-        display: none;
-    }
-    .middleSection{
-        margin-top: 10px;
-        width:50%;
-        height: 50%;
-    }
-    .leftSection{
-        margin-top: 10px;
-        width:50%;
-        /* height: 50%; */
+        margin-top: 20px;
+        margin-bottom: 10px;
+        background-color: #ebebeb;
+        color: black;
+        width: 150px;
+        height: 40px;
+        border-radius: 7px;
     }
 
-    .rightSection{
+    .customize {
         display: none;
     }
-    .buttomSection{
+
+    .middleSection {
+        margin-top: 10px;
+        width: 100%;
+        height: 50%;
+    }
+
+    .leftSection {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .rightSection {
+        display: none;
+    }
+
+    .buttomSection {
         display: flex;
         height: 50%;
     }
-    .map{
+
+    .map {
         display: none;
     }
-    .mapInnerWrap{
+
+    .mapInnerWrap {
         width: 100%;
     }
+
 }
 
 @media (max-width:992px) {
-    .userPic{
+    .userPic {
         display: none;
     }
+
     .logo94 {
         width: 36px;
         height: 36px;
