@@ -6,6 +6,7 @@ header,
 footer,
 main {
     display: block;
+    color: #ffffff;
 }
 
 * {
@@ -431,6 +432,9 @@ margin-left: 93%;
 .bg-606060 {
     background-color: #606060;
 }
+.btn-check:disabled+.btn{
+    opacity: 1;
+}
 
 .btn-outline-primary {
     --bs-btn-active-bg: #2196f3;
@@ -438,7 +442,9 @@ margin-left: 93%;
     --bs-btn-focus-bg: #2196f3;
     --bs-btn-bg: #606060;
     --bs-btn-color: #ffffff;
+    --bs-btn-disabled-color: #ffffff;
     border: 0;
+    opacity: 1;
 }
 
 .btn-primary {
@@ -452,6 +458,10 @@ margin-left: 93%;
 
 .templates-body .row {
     margin: 0;
+}
+
+.display-6{
+    font-size: calc(0.5rem + 1vw);
 }
 
 @media (max-width:768px) {
