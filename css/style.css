@@ -43,9 +43,11 @@ main {
 
 .userPic {
     position: absolute;
+    top: 10px;
+    right: 10px;
     width: 100px;
-    border-radius: 1000px;
-    margin-left: 93%;
+    border-radius: 100px;
+    /* margin-left: 93%; */
 }
 
 .howMuchCO2>h6 {
@@ -335,10 +337,6 @@ main {
     font-size: calc(1rem + 1vw);
 }
 
-.fs-38 {
-    font-size: 38px;
-}
-
 .logo94 {
     width: 94px;
     height: 94px;
@@ -369,7 +367,8 @@ main {
     opacity: 1;
 }
 
-.navbar-nav .nav-link.active, .navbar-nav .nav-link.show{
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
     color: #2196f3;
 }
 
