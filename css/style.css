@@ -129,12 +129,14 @@ main {
     margin-top: 10px;
     width: 80%;
 }
-.container-fluid{
+
+.container-fluid {
     padding-left: 0;
     padding-right: 0;
     margin: 0%;
 }
-.main1{
+
+.main1 {
     padding: 0;
     margin: 0%;
     padding-left: 0;
@@ -362,8 +364,13 @@ main {
 .bg-606060 {
     background-color: #606060;
 }
-.btn-check:disabled+.btn{
+
+.btn-check:disabled+.btn {
     opacity: 1;
+}
+
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show{
+    color: #2196f3;
 }
 
 .btn-outline-primary {
@@ -390,10 +397,19 @@ main {
     margin: 0;
 }
 
-.display-6{
+.display-6 {
     font-size: calc(0.5rem + 1vw);
 }
 
+.form-control,
+.form-control:disabled,
+.form-select,
+.form-select:disabled {
+    background-color: #606060;
+    color: #ffffff;
+}
+
+/* .form-control */
 @media (max-width:768px) {
 
     .navbar-brand {
