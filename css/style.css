@@ -69,6 +69,9 @@ main {
 #myChart {
     color: white;
 }
+#line_top_x{
+    color:white;
+}
 
 .predictionLeft {
     /* display: flex; */
@@ -97,7 +100,7 @@ main {
 
 .leftSection {
     flex-grow: 1;
-    width: 45%;
+    width: 40%;
     
 }
 
@@ -120,15 +123,13 @@ main {
     z-index: -1;
     margin-left: 10px;
     height: 390px;
-    /* margin-top: 10px; */
+    margin-top: 10px;
 
 }
 
 .mapWrap {
     display: flex;
     background-color: #535353;
-    margin-top: 10px    ;
-
 }
 
 .mapInnerWrap {
@@ -518,3 +519,4 @@ main {
         background-image: url(../images/logo36.png);
     }
 }
+

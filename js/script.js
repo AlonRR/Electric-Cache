@@ -68,3 +68,31 @@ var myChart2 = new Chart(ctr, {
     }
 });
 
+
+  // Get the context of the new chart canvas
+  var ctxnew = document.getElementById('newChart').getContext('2d');
+
+  // Set the chart data and options
+  var chartData = {
+    labels: ['Label 1', 'Label 2', 'Label 3'],  // Replace with your data labels
+    datasets: [
+      {
+        label: 'Dataset 1',  // Replace with your dataset label
+        data: [10, 20, 30],  // Replace with your dataset values
+        backgroundColor: 'rgba(75, 192, 192, 0.2)',  // Replace with desired color
+        borderColor: 'rgba(75, 192, 192, 1)',  // Replace with desired color
+        borderWidth: 1
+      }
+    ]
+  };
+
+  var chartOptions = {
+    // Set chart options as needed
+  };
+
+  // Create and render the new line chart
+  new Chart(ctxnew, {
+    type: 'line',
+    data: chartData,
+    options: chartOptions
+  });
