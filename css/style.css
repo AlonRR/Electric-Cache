@@ -31,8 +31,6 @@ main {
 
 .header1 {
     width: 100%;
-    display: flex;
-    align-items: center;
 }
 
 
@@ -92,22 +90,25 @@ main {
 }
 
 .rightSection {
-    width: 35%;
-    flex-grow: 1;
+    width: 50%;
+    flex-grow: 0;
     margin-left: 10px;
 }
 
 .leftSection {
     flex-grow: 1;
-    width: 35%;
+    width: 45%;
+    
 }
 
 .buttomSection {
     display: none;
+    
 }
 
 .setRecommended {
     margin-left: 10px;
+    height: 180px;
 }
 
 .setRecommended>p {
@@ -119,6 +120,15 @@ main {
     z-index: -1;
     margin-left: 10px;
     height: 390px;
+    /* margin-top: 10px; */
+
+}
+
+.mapWrap {
+    display: flex;
+    background-color: #535353;
+    margin-top: 10px    ;
+
 }
 
 .mapInnerWrap {
