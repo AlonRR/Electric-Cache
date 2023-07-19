@@ -42,7 +42,7 @@ if (isset($_SESSION['username'])) {
                             <a class="row align-items-end navbar-brand" href="index.html">
                                 <div class="col logo94"></div>
                                 <h1 class="col display-5 justify-content-end align-bottom p-0 mb-0 text-white">
-                                    Electri-Cache
+                                    Electric-Cache
                                 </h1>
                             </a>
                         </li>
