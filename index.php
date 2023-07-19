@@ -39,7 +39,7 @@ if (isset($_SESSION['username'])) {
                 <div class="row p-0">
                     <ul class="navbar-nav align-items-end fw-300 fs-30">
                         <li class="nav-item">
-                            <a class="row align-items-end navbar-brand" href="index.html">
+                            <a class="row align-items-end navbar-brand" href="index.php">
                                 <div class="col logo94"></div>
                                 <h1 class="col display-5 justify-content-end align-bottom p-0 mb-0 text-white">
                                     Electric-Cache
@@ -47,7 +47,7 @@ if (isset($_SESSION['username'])) {
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="index.html"> <!-- Added class: text-white -->
+                            <a class="nav-link active" href="index.php"> <!-- Added class: text-white -->
                                 <img src="images/Electric-Cache_Project_Home_Icon_1_selected.png"
                                     alt="Electric-Cache_Project_Home_Icon_1.png">
                                 Home
@@ -62,7 +62,7 @@ if (isset($_SESSION['username'])) {
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href=""> <!-- Added class: text-white -->
+                            <a class="nav-link text-white" href="stats.html"> <!-- Added class: text-white -->
                                 <img src="images/Electric-Cache_Project_Poll_Icon_1.png" alt="">
                                 Stats
                             </a>
