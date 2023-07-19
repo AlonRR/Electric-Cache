@@ -378,7 +378,7 @@ main {
     opacity: 1;
 }
 
-.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.active img,
 .navbar-nav .nav-link.show {
     color: #2196f3;
 }
