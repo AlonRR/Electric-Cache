@@ -1,3 +1,14 @@
+<?php
+session_start();
+if (isset($_SESSION['username'])) {
+  $username = $_SESSION['username'];
+//   echo "Welcome, " . $username . "!";
+} else {
+  header("Location: login.php"); // Redirect to the login page if not logged in
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 

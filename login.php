@@ -25,10 +25,10 @@
       </div> 
 
       <?php
-      $servername = "localhost";
-      $username = "your_username";
-      $password = "your_password";
-      $dbname = "your_database";
+      $servername = "148.66.138.145";
+      $username = "dbusrShnkr23";
+      $password = "studDBpwWeb2!";
+      $dbname = "dbShnkr23stud2";
       
       $conn = new mysqli($servername, $username, $password, $dbname);
       if ($conn->connect_error) {
@@ -40,7 +40,7 @@
       $password = $_POST['password'];
       
       // Prepare the SQL statement to check the user's credentials
-      $stmt = $conn->prepare("SELECT * FROM users WHERE username = ? AND password = ?");
+      $stmt = $conn->prepare("SELECT * FROM tbl_211_users WHERE username = ? AND password = ?");
       $stmt->bind_param("ss", $username, $password);
       $stmt->execute();
       $result = $stmt->get_result();
@@ -50,7 +50,7 @@
         // Successful login
         session_start();
         $_SESSION['username'] = $username;
-        header("Location: welcome.php"); // Redirect to a welcome page
+        header("Location: index.php"); // Redirect to a welcome page
       } else {
         // Invalid credentials
         echo "Invalid username or password. Please try again.";
