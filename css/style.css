@@ -13,7 +13,9 @@ main {
     margin: 0;
     padding: 0;
 }
-  
+
+
+
 
 .container-fluid1 {
     width: 100%;
@@ -39,6 +41,7 @@ main {
 }
 
 
+
 .userPic {
     position: absolute;
     top: 10px;
@@ -48,14 +51,16 @@ main {
     /* margin-left: 93%; */
 }
 
-.nav-item {
-    color: white;
+.user_pic {
+    width: 20%;
+    height: 20%;
+    border-radius: 30%;
+    margin-top: 3%;
 }
 
-.howMuchCO2>h5 {
-    display: flex;
-    font-size: 30px;
-
+.profile_detail {
+position: relative;
+color: white;
 }
 
 .howMuchCO2>h6 {
@@ -65,9 +70,16 @@ main {
 
 }
 
+.howMuchCO2>h5 {
+    display: flex;
+    font-size: 30px;
+
+}
+
 .howMuchCO2>ul {
     font-size: 22px;
 }
+
 
 .div1 {
     background-color: #535353;
@@ -262,7 +274,6 @@ main {
     margin-left: 10px;
 }
 
-
 .div1>ul>li {
     font-size: 70%;
     margin-left: 10px;
@@ -342,12 +353,25 @@ main {
 
 
 .body1>.container {
-    width: 1000%;
-    /* margin: 15px auto; */
+    width: 70%;
+    margin: 15px auto;
 }
 
 .navbar {
     margin-left: 15px;
+}
+
+.navbar_profile {
+    justify-content: center;
+    /* padding: 0 auto; */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+.main_profile {
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 
 .fw-300 {
@@ -362,10 +386,15 @@ main {
     width: 94px;
     height: 94px;
     background-image: url(../images/logo94.png);
+    background-repeat: no-repeat;
 }
 
 .bg-2b2b2b {
     background-color: #2b2b2b;
+}
+
+.bg-trans {
+    background-color: transparent;
 }
 
 .bg-4a4a4a {
@@ -388,7 +417,7 @@ main {
     opacity: 1;
 }
 
-.navbar-nav .nav-link.active img,
+.navbar-nav .nav-link.active,
 .navbar-nav .nav-link.show {
     color: #2196f3;
 }
@@ -528,9 +557,4 @@ main {
         height: 36px;
         background-image: url(../images/logo36.png);
     }
-}
-
-.main_container>nav {
-    height: 80%;
-    width: 100%;
 }

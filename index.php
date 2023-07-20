@@ -1,11 +1,13 @@
 <?php
 session_start();
-if (isset($_SESSION['username'])) {
-    $username = $_SESSION['username'];
+if (isset($_SESSION['user_id'])) {
+    $user_id = $_SESSION['user_id'];
     //   echo "Welcome, " . $username . "!";
 } else {
     header("Location: login.php"); // Redirect to the login page if not logged in
 }
+
+
 ?>
 
 
@@ -26,6 +28,7 @@ if (isset($_SESSION['username'])) {
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Nunito+Sans:wght@200&family=Rubik&display=swap"
         rel="stylesheet">
+    
     <link rel="icon" href="images/icon.ico">
     <link rel="stylesheet" href="css/style.css">
     <title>Electric-Cache</title>
@@ -34,8 +37,26 @@ if (isset($_SESSION['username'])) {
 <body class="body1">
     <div class="container-fluid div1">
         <header class="container p-3 ms-0 me-0 mw-100 bg-2b2b2b fw-300">
-            <nav class="navbar navbar-expand p-0 w-100">
-                <img src="images/freida-user.jpg" alt="user" class="userPic">
+            <nav class="navbar navbar-expand p-0 w-100">`
+                <div class="modal" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Modal title</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                            </div>
+                            <img src="images/freida-user.jpg" alt="user" class="userPic">
+                            <div class="modal-body">
+                                <p>Modal body text goes here.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="row p-0">
                     <ul class="navbar-nav align-items-end fw-300 fs-30">
                         <li class="nav-item">
