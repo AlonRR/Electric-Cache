@@ -13,7 +13,7 @@ main {
     margin: 0;
     padding: 0;
 }
-
+  
 
 .container-fluid1 {
     width: 100%;
@@ -46,6 +46,10 @@ main {
     width: 100px;
     border-radius: 100px;
     /* margin-left: 93%; */
+}
+
+.nav-item {
+    color: white;
 }
 
 .howMuchCO2>h5 {
@@ -258,6 +262,7 @@ main {
     margin-left: 10px;
 }
 
+
 .div1>ul>li {
     font-size: 70%;
     margin-left: 10px;
@@ -337,8 +342,8 @@ main {
 
 
 .body1>.container {
-    width: 70%;
-    margin: 15px auto;
+    width: 1000%;
+    /* margin: 15px auto; */
 }
 
 .navbar {
@@ -523,4 +528,9 @@ main {
         height: 36px;
         background-image: url(../images/logo36.png);
     }
+}
+
+.main_container>nav {
+    height: 80%;
+    width: 100%;
 }
