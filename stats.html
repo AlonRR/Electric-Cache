@@ -11,7 +11,42 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
     <link rel="icon" href="images/icon.ico">
-    <title>Template</title>
+
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawVisualization);
+
+      function drawVisualization() {
+        // Some raw data (not necessarily accurate)
+        var data = google.visualization.arrayToDataTable([
+          ['Month', 'Bolivia', 'Ecuador', 'Madagascar', 'Papua New Guinea', 'Rwanda', 'Average'],
+          ['2004/05',  165,      938,         522,             998,           450,      614.6],
+          ['2005/06',  135,      1120,        599,             1268,          288,      682],
+          ['2006/07',  157,      1167,        587,             807,           397,      623],
+          ['2007/08',  139,      1110,        615,             968,           215,      609.4],
+          ['2008/09',  136,      691,         629,             1026,          366,      569.6]
+        ]);
+
+        var options = {
+          title : 'Monthly Coffee Production by Country',
+          vAxis: {title: 'Cups'},
+          hAxis: {title: 'Month'},
+          seriesType: 'bars',
+          series: {5: {type: 'line'}}
+        };
+
+        var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+
+</head>
+
+
+
+<title>Template</title>
 </head>
 
 <body class="ms-0 me-0 p-0 bg-3b3b3b templates-body">
@@ -54,10 +89,10 @@
                         <a class="nav-link active" href="">
                             <!-- <i class="fa-solid fa-square-poll-vertical" style="color: #2396f3;"></i> -->
                             <!-- <img src="images/Electric-Cache_Project_Poll_Icon_1.png" alt=""> -->
-                            <svg class = "statsSelected" xmlns="http://www.w3.org/2000/svg" height="0.875em"
+                            <svg class="statsSelected" xmlns="http://www.w3.org/2000/svg" height="0.875em"
                                 viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                                 <style>
-                                    .statsSelected{
+                                    .statsSelected {
                                         fill: #2196f3
                                     }
                                 </style>
@@ -81,17 +116,8 @@
         <div class="row row-col-md-2 mw-100 mh-100">
             <div class="col-md-4 mw-100 mh-100 p-1 bg-777777-40 templates-names">
                 <div class="row ">
-                    <input class="search-bar col-7" placeholder="Template name">
-                    <a class="col btn btn-primary" href="objectPage.html" role="button">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
-                            <path
-                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
-                        </svg>
-                        <small>
-                            New Template
-                        </small>
-                    </a>
+                    <!--Div that will hold the pie chart-->
+                    <div id="chart_div" style="width: 900px; height: 500px;"></div>                
                 </div>
                 <div class="row gap-1">
                     <div class="row bg-3b3b3b">

@@ -28,10 +28,10 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     $_SESSION['username'] = $username;
     header("Location: index.php"); // Redirect to a welcome page
   } 
-  // else {
-  //   // Invalid credentials
-  //   echo "Invalid username or password. Please try again.";
-  //}
+  else {
+    // Invalid credentials
+    echo "Invalid username or password. Please try again.";
+  }
 
   $stmt->close();
 }

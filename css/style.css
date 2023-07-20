@@ -48,17 +48,21 @@ main {
     /* margin-left: 93%; */
 }
 
-.howMuchCO2>h6 {
-    margin-left: 10px;
+.howMuchCO2>h5 {
     display: flex;
-    font-size: small;
+    font-size: 30px;
 
 }
 
-.howMuchCO2>h5 {
+.howMuchCO2>h6 {
+    margin-left: 10px;
     display: flex;
-    font-size: medium;
+    font-size: 18px;
 
+}
+
+.howMuchCO2>ul {
+    font-size: 22px;
 }
 
 .div1 {
@@ -69,8 +73,9 @@ main {
 #myChart {
     color: white;
 }
-#line_top_x{
-    color:white;
+
+#line_top_x {
+    color: white;
 }
 
 .predictionLeft {
@@ -101,12 +106,12 @@ main {
 .leftSection {
     flex-grow: 1;
     width: 40%;
-    
+
 }
 
 .buttomSection {
     display: none;
-    
+
 }
 
 .setRecommended {
@@ -519,4 +524,3 @@ main {
         background-image: url(../images/logo36.png);
     }
 }
-
