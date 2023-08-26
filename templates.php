@@ -13,6 +13,7 @@ include "config.php";
 $sql = "SELECT t.template_name, t.battery_level, t.start_time, t.end_time, t.template_repeat
                         FROM tbl_211_templates t
                         WHERE t.user_id =" . $user_id;
+// echo $sql;
 
 $result = mysqli_query($connection, $sql);
 if ($result) {
@@ -128,8 +129,7 @@ if ($result) {
 
                 <div class="row gap-1">
                     <?php
-
-                    while ($row = $result->fetch_assoc()) {
+                    do {
 
                         echo '<div class="row bg-3b3b3b align-items-center">';
                         echo '    <div class="col-6">';
@@ -147,18 +147,22 @@ if ($result) {
                         echo '       </form>';
                         echo '     </div>';
                         echo '</div>';
-                    }
+                    } while ($row = $result->fetch_assoc());
                     ?>
                 </div>
-                <div class="workers"> <?php if ($user_type == 2) {
-                    echo 'Employees';
-                }
-                ?> <div
-                    class="row bg-3b3b3b align-items-center">
-                    <div class="col-6"></div>
-                    <?php
-                    if ($user_type == 2) {
-                        $query = "SELECT
+                <div class="workers">
+                    <?php if ($user_type == 2) {
+                        echo '<i class="bi bi-clipboard-data"></i>';
+                        
+                        echo 'Employees';
+                    }
+                    ?>
+
+                    <div class="row gap-1">
+                        <div class="col-6"></div>
+                        <?php
+                        if ($user_type == 2) {
+                            $query = "SELECT
                         workers.username AS worker_name,
                         t.template_name,
                         t.battery_level,
@@ -176,124 +180,125 @@ if ($result) {
                     WHERE
                         employers.user_id = $user_id";
 
-                        $result = mysqli_query($connection, $query);
-                        if ($result) {
-                            $row = mysqli_fetch_assoc($result);
-                        } else
-                            die("DB query failed.");
-                        while ($row = $result->fetch_assoc()) {
+                            $result = mysqli_query($connection, $query);
+                            if ($result) {
+                                $row = mysqli_fetch_assoc($result);
+                            } else
+                                die("DB query failed.");
+                            do {
 
-                            echo '<div class="row bg-3b3b3b align-items-center">';
-                            echo '    <div class="col-6">';
-                            echo '        <p>' . $row['worker_name'] . '</p>';
-                            echo '<p>' . $row['template_name'] . '</p>';
-                            echo   $row['start_time'] . ' till ' . $row['end_time'] . ' ' . $row['template_repeat'];
-                            echo '    </div>';
-                            echo '    <div class="col-3 form-check form-switch">';
-                            echo '        <input class="form-check-input" type="checkbox" role="switch" id="night_busses" title="toggle-switch" checked>';
-                            echo '    </div>';
-                            echo '    <div class="col-3 text-end">';
-                            echo '      <form method = "post" action="stats.php">';
-                            echo '          <button type="submit" style="color: #ffffff" class="btn text-left p-0">More</button>';
-                            echo '          <input type="hidden" name="template_name" value="' . $row['template_name'] . '">';
-                            echo '       </form>';
-                            echo '     </div>';
-                            echo '</div>';
+                                echo '<div class="row bg-3b3b3b align-items-center">';
+                                echo '    <div class="col-6">';
+                                echo '        <p>' . $row['worker_name'] . '</p>';
+                                echo '<p>' . $row['template_name'] . '</p>';
+                                echo $row['start_time'] . ' till ' . $row['end_time'] . ' ' . $row['template_repeat'];
+                                echo '    </div>';
+                                echo '    <div class="col-3 form-check form-switch">';
+                                echo '        <input class="form-check-input" type="checkbox" role="switch" id="night_busses" title="toggle-switch" checked>';
+                                echo '    </div>';
+                                echo '    <div class="col-3 text-end">';
+                                echo '      <form method = "post" action="stats.php">';
+                                echo '          <button type="submit" style="color: #ffffff" class="btn text-left p-0">More</button>';
+                                echo '          <input type="hidden" name="template_name" value="' . $row['template_name'] . '">';
+                                echo '       </form>';
+                                echo '     </div>';
+                                echo '</div>';
+                            } while ($row = $result->fetch_assoc());
                         }
-                    }
 
-                    ?>
-                </div>
-
-            </div>
-        </div>
-        <div class="col-md ms-0 me-0 mw-100 mh-100 p-0 bg-3b3b3b">
-            <div class="row row-col-2 mw-100 mh-100 bg-2b2b2b mt-1 ms-1 me-1">
-                <a href="editTemplate.php" class="btn col" id="edit-btn">
-                    <i class="bi bi-pencil-fill"></i> Edit
-                </a>
-            </div>
-            <fieldset class="row mw-100 mh-100" disabled>
-                <div class="col-xl p-1">
-                    <div class="row p-2 bg-4a4a4a">
-                        <div class="form-label display-6 p-0">Name</div>
-                        <input class="form-control" type="text" name="name" placeholder="Template name here..."
-                            value="Parked Mon Wed">
+                        ?>
                     </div>
-                    <div class="row bg-4a4a4a row-gap-3">
-                        <div class="display-6 form-label">Time</div>
-                        <div class="row ps-0">
-                            <label class="form-label col" for="battery-percent">Set grid battery level:</label>
-                            <input class="col form-control" type="number" name="battery-percent" id="battery-percent"
-                                min="0" max="100" placeholder="Set percentage" value="50">
+
+                </div>
+            </div>
+            <div class="col-md ms-0 me-0 mw-100 mh-100 p-0 bg-3b3b3b">
+                <div class="row row-col-2 mw-100 mh-100 bg-2b2b2b mt-1 ms-1 me-1">
+                    <a href="editTemplate.php" class="btn col" id="edit-btn">
+                        <i class="bi bi-pencil-fill"></i> Edit
+                    </a>
+                </div>
+                <fieldset class="row mw-100 mh-100" disabled>
+                    <div class="col-xl p-1">
+                        <div class="row p-2 bg-4a4a4a">
+                            <div class="form-label display-6 p-0">Name</div>
+                            <input class="form-control" type="text" name="name" placeholder="Template name here..."
+                                value="Parked Mon Wed">
                         </div>
-                        <div class="row ps-0">
-                            <label class="form-label col" for="start-time">Start:</label>
-                            <input class="col form-control" type="time" name="start-time" id="start-time" value="09:00">
-                        </div>
-                        <div class="row ps-0">
-                            <label class="form-label col" for="end-time">End:</label>
-                            <input class="col form-control" type="time" name="end-time" id="end-time" value="17:00">
-                        </div>
-                        <div class="row ps-0">
-                            <label class="form-label col" for="frequency">Repeat:</label>
-                            <select class="col form-select ms-4" name="frequency" id="frequency">
-                                <option value="daily">Daily</option>
-                                <option value="weekly" selected>Weekly</option>
-                                <option value="monthly">Monthly</option>
-                            </select>
-                        </div>
-                        <div class="row">
-                            <div class="btn-group col p-0 bg-606060" role="group"
-                                aria-label="Basic checkbox toggle button group">
-                                <input type="checkbox" class="btn-check" id="btn-sun">
-                                <label class="btn btn-outline-primary" for="btn-sun">Sun</label>
-                                <input type="checkbox" class="btn-check" id="btn-mon" checked>
-                                <label class="btn btn-outline-primary" for="btn-mon">Mon</label>
-                                <input type="checkbox" class="btn-check" id="btn-tue">
-                                <label class="btn btn-outline-primary" for="btn-tue">Tue</label>
-                                <input type="checkbox" class="btn-check" id="btn-wed" checked>
-                                <label class="btn btn-outline-primary" for="btn-wed">Wed</label>
-                                <input type="checkbox" class="btn-check" id="btn-thu">
-                                <label class="btn btn-outline-primary" for="btn-thu">Thu</label>
-                                <input type="checkbox" class="btn-check" id="btn-fri">
-                                <label class="btn btn-outline-primary" for="btn-fri">Fri</label>
-                                <input type="checkbox" class="btn-check" id="btn-sat">
-                                <label class="btn btn-outline-primary" for="btn-sat">Sat</label>
+                        <div class="row bg-4a4a4a row-gap-3">
+                            <div class="display-6 form-label">Time</div>
+                            <div class="row ps-0">
+                                <label class="form-label col" for="battery-percent">Set grid battery level:</label>
+                                <input class="col form-control" type="number" name="battery-percent"
+                                    id="battery-percent" min="0" max="100" placeholder="Set percentage" value="50">
+                            </div>
+                            <div class="row ps-0">
+                                <label class="form-label col" for="start-time">Start:</label>
+                                <input class="col form-control" type="time" name="start-time" id="start-time"
+                                    value="09:00">
+                            </div>
+                            <div class="row ps-0">
+                                <label class="form-label col" for="end-time">End:</label>
+                                <input class="col form-control" type="time" name="end-time" id="end-time" value="17:00">
+                            </div>
+                            <div class="row ps-0">
+                                <label class="form-label col" for="frequency">Repeat:</label>
+                                <select class="col form-select ms-4" name="frequency" id="frequency">
+                                    <option value="daily">Daily</option>
+                                    <option value="weekly" selected>Weekly</option>
+                                    <option value="monthly">Monthly</option>
+                                </select>
+                            </div>
+                            <div class="row">
+                                <div class="btn-group col p-0 bg-606060" role="group"
+                                    aria-label="Basic checkbox toggle button group">
+                                    <input type="checkbox" class="btn-check" id="btn-sun">
+                                    <label class="btn btn-outline-primary" for="btn-sun">Sun</label>
+                                    <input type="checkbox" class="btn-check" id="btn-mon" checked>
+                                    <label class="btn btn-outline-primary" for="btn-mon">Mon</label>
+                                    <input type="checkbox" class="btn-check" id="btn-tue">
+                                    <label class="btn btn-outline-primary" for="btn-tue">Tue</label>
+                                    <input type="checkbox" class="btn-check" id="btn-wed" checked>
+                                    <label class="btn btn-outline-primary" for="btn-wed">Wed</label>
+                                    <input type="checkbox" class="btn-check" id="btn-thu">
+                                    <label class="btn btn-outline-primary" for="btn-thu">Thu</label>
+                                    <input type="checkbox" class="btn-check" id="btn-fri">
+                                    <label class="btn btn-outline-primary" for="btn-fri">Fri</label>
+                                    <input type="checkbox" class="btn-check" id="btn-sat">
+                                    <label class="btn btn-outline-primary" for="btn-sat">Sat</label>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-xl m-1 bg-4a4a4a">
-                    <div class="row display-6 vehicles p-2">
-                        Vehicles
-                    </div>
-                    <div class="col">
-                        <?php
-                        $sql = "SELECT v.vehicle_number
+                    <div class="col-xl m-1 bg-4a4a4a">
+                        <div class="row display-6 vehicles p-2">
+                            Vehicles
+                        </div>
+                        <div class="col">
+                            <?php
+                            $sql = "SELECT v.vehicle_number
                             FROM tbl_211_vehicles AS v
                             INNER JOIN tbl_211_templates AS t ON v.template_id = t.template_id
                             WHERE t.user_id = $user_id";
 
-                        $result = mysqli_query($connection, $sql);
-                        if ($result) {
-                            $row = mysqli_fetch_assoc($result);
-                        } else
-                            die("DB query failed.");
+                            $result = mysqli_query($connection, $sql);
+                            if ($result) {
+                                $row = mysqli_fetch_assoc($result);
+                            } else
+                                die("DB query failed.");
 
-                        while ($row = $result->fetch_assoc()) {
-                            echo '
+                            while ($row = $result->fetch_assoc()) {
+                                echo '
                                 <div class="list-group-item row">
                                 <i class="bi bi-car-front-fill"></i>';
-                            echo $row['vehicle_number'];
-                            echo '<br';
-                        }
-                        ?>
+                                echo $row['vehicle_number'];
+                                echo '<br';
+                            }
+                            ?>
 
+                        </div>
                     </div>
-                </div>
-            </fieldset>
-        </div>
+                </fieldset>
+            </div>
         </div>
     </main>
 </body>

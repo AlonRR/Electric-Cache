@@ -5,6 +5,8 @@ if (!(isset($_SESSION["user_id"]))) {
     header("Location: login.php");
 }
 $user_id = $_SESSION["user_id"];
+$user_type = $_SESSION["type_id"];
+
 include "config.php";
 
 $sql = "SELECT t.template_name, t.battery_level, t.start_time, t.end_time, t.template_repeat
@@ -51,7 +53,7 @@ if ($result) {
     <header class="container p-3 ms-0 me-0 mw-100 bg-2b2b2b fw-300">
         <nav class="navbar navbar-expand p-0 w-100">
             <div class="row p-0">
-                <img src="images/freida-user.jpg" alt="user" class="userPic">
+                <img src="<?php echo $_SESSION["images"] ?>" alt="user" class="userPic">
                 <ul class="navbar-nav align-items-end fw-300 fs-30">
                     <li class="nav-item">
                         <a class="row align-items-end navbar-brand" href="index.php">
@@ -119,7 +121,7 @@ if ($result) {
                         $row = mysqli_fetch_assoc($result);
                     } else
                         die("DB query failed.");
-                    while ($row = $result->fetch_assoc()) {
+                    do{
                         $modalId = "deleteModal" . $row['template_id'];
 
                         // Display template details
@@ -158,11 +160,15 @@ if ($result) {
                         echo '        </div>';
                         echo '    </div>';
                         echo '</div>';
-                    }
+                    }while ($row = $result->fetch_assoc());
                     ?>
-                    Employees
-
+                    
                     <?php
+                   
+                   if ($user_type == 2) {
+                        echo '<i class="bi bi-clipboard-data"></i>';
+                        echo 'Employees';
+                    }
                     $query = "SELECT
                         users.username AS worker_name,
                         t.template_id,
@@ -186,7 +192,7 @@ if ($result) {
                         $row = mysqli_fetch_assoc($result);
                     } else
                         die("DB query failed.");
-                    while ($row = $result->fetch_assoc()) {
+                    do{
                         $modalId = "deleteModal" . $row['template_id'];
                         // Display template details
                         echo '<div class="row bg-3b3b3b align-items-center">';
@@ -225,7 +231,7 @@ if ($result) {
                         echo '        </div>';
                         echo '    </div>';
                         echo '</div>';
-                    }
+                    }while ($row = $result->fetch_assoc()) ;
 
                     ?>
                     <!-- <div class="col-3 text-end">

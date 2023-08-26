@@ -106,11 +106,14 @@ include "config.php";
                 <div class="modal-dialog modal-dialog-centered modal-lg">
                     <div class="modal-content" style="background-color: #3b3b3b">
                         <div class="modal-header">
-                            <img src="<?php echo $_SESSION["images"] ?>" alt="User Image" class="img-fluid userImage userPic">
+                            <!-- <img src="<?php echo $_SESSION["images"] ?>" alt="User Image" class="img-fluid userImage userPic"> -->
                             <button class="btn btn-secondary" id="edit-btn" style="color: white">
                                 <i class="bi bi-pencil-fill"></i>
                                 Edit
                             </button>
+                            <a href="logout.php">
+                                <button type="link" class="btn btn-primary" id="logout-btn">Logout</button>
+                            </a>
                         </div>
                         <div class="modal-body">
                             <div id="viewMode">
@@ -171,6 +174,7 @@ include "config.php";
                                 </div>
                                 <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
                                 <button type="submit" class="btn btn-primary" id="save-btn">Save</button>
+
                             </form>
                         </div>
                     </div>
@@ -286,7 +290,7 @@ include "config.php";
                             } else
                                 die("DB query failed.");
 
-                            while ($row = $result->fetch_assoc()) {
+                            do {
                                 echo '<div class="template d-flex">
                                 <div class="form-check form-switch">
                                     <input class="form-check-input" type="checkbox" role="switch"
@@ -301,7 +305,7 @@ include "config.php";
                                 echo "<br>";
                                 echo $row['template_repeat'];
                                 echo '</div></div>';
-                            }
+                            }while ($row = $result->fetch_assoc());
                             ?>
 
                         </div>
@@ -317,9 +321,7 @@ include "config.php";
                                 same amount</li>
                             <li>The average new car amits 120.1g/km of CO2</li>
                             <li>CO2 emmisions from cars has dropped by 8.9% between 2000 and 2015</li>
-                            <li>Total CO2 emmisions from all vehicles currently on the road has fallen by 4.6%
-                                between
-                                2000 - 2015</li>
+                        
                         </ul>
 
                     </div>
@@ -342,7 +344,7 @@ include "config.php";
                         } else
                             die("DB query failed.");
 
-                        while ($row = $result->fetch_assoc()) {
+                        do {
                             echo '<div class="template d-flex">
                             <div class="form-check form-switch">
                                 <input class="form-check-input" type="checkbox" role="switch"
@@ -357,7 +359,7 @@ include "config.php";
                             echo "<br>";
                             echo $row['template_repeat'];
                             echo '</div></div>';
-                        }
+                        } while ($row = $result->fetch_assoc());
                         ?>
 
                     </div>

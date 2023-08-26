@@ -139,13 +139,13 @@ if (isset($_POST['template_name'])) {
                             die("DB query failed.");
                         }
 
-                        while ($row = mysqli_fetch_assoc($result)) {
+                        do {
                             echo '<div class="list-group-item row">
                           <i class="bi bi-car-front-fill"></i>';
                             echo $row['vehicle_number'];
                             echo '<br>';
                             echo '</div>';
-                        }
+                        }while ($row = mysqli_fetch_assoc($result));
 
                         ?>
                     </div>
