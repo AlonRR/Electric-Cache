@@ -33,11 +33,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['template_name'])) {
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['template_id']) && isset($_POST['action_type']) && $_POST['action_type'] == 'delete') {
     $template_id = $_POST['template_id'];
     $sql = "DELETE FROM tbl_211_templates WHERE template_id = '$template_id' ";
-    echo $sql;
+    // echo $sql;
+    $result = mysqli_query($connection, $sql);
+    //                     if ($result) {
+    //                         $row = mysqli_fetch_assoc($result);
+    //                     } else
+    //                         die("DB query failed.");
 }
 
 
 
-// header("Location: templates.php"); // Redirect back to your previous page (replace with your actual page)
+header("Location: templates.php"); // Redirect back to your previous page (replace with your actual page)
 
 ?>

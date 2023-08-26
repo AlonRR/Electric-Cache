@@ -143,6 +143,7 @@ if ($result) {
                         echo '      <form method = "post" action="stats.php">';
                         echo '          <button type="submit" style="color: #ffffff" class="btn text-left p-0">More</button>';
                         echo '          <input type="hidden" name="template_name" value="' . $row['template_name'] . '">';
+
                         echo '       </form>';
                         echo '     </div>';
                         echo '</div>';
@@ -186,7 +187,7 @@ if ($result) {
                             echo '    <div class="col-6">';
                             echo '        <p>' . $row['worker_name'] . '</p>';
                             echo '<p>' . $row['template_name'] . '</p>';
-                            echo $row['start_time'] . ' till ' . $row['end_time'] . ' ' . $row['template_repeat'];
+                            echo   $row['start_time'] . ' till ' . $row['end_time'] . ' ' . $row['template_repeat'];
                             echo '    </div>';
                             echo '    <div class="col-3 form-check form-switch">';
                             echo '        <input class="form-check-input" type="checkbox" role="switch" id="night_busses" title="toggle-switch" checked>';

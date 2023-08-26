@@ -11,7 +11,9 @@ include "config.php";
 <?php
 if (isset($_POST['template_name'])) {
     $template_name = $_POST['template_name'];
-    $sql = 'SELECT * FROM tbl_211_templates t WHERE t.user_id =' . $user_id . ' AND t.template_name = "' . $template_name . '"';
+    $sql = 'SELECT * FROM tbl_211_templates t WHERE t.template_name = "' . $template_name . '"';
+    // $sql = 'SELECT * FROM tbl_211_templates t WHERE t.user_id =' . $user_id . ' AND t.template_name = "' . $template_name . '"';
+
     // echo $sql;
     $result = mysqli_query($connection, $sql);
     if ($result) {
