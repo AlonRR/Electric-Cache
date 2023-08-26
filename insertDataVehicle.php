@@ -32,5 +32,5 @@ if (isset($_POST['action'])) {
     }
 }
 
-header("Location: Templates.php"); // Redirect back to your previous page (replace with your actual page)
+header("Location: templates.php"); // Redirect back to your previous page (replace with your actual page)
 ?>
