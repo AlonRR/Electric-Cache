@@ -517,7 +517,7 @@ p{
     }
 
     .templates-names {
-        display: none;
+        display: block;
     }
 
     .body1 .gridBattery {

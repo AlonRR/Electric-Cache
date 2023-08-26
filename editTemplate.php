@@ -69,7 +69,7 @@ if ($result) {
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="battery.php">
+                        <a class="nav-link" href="#">
                             <img src="images/Electric-Cache_Project_Battery_Charging_Full_Icon_1.png"
                                 alt="Electric-Cache_Project_Battery_Charging_Full_Icon_1.png"
                                 title="Electric-Cache_Project_Battery_Charging_Full_Icon_1.png">
