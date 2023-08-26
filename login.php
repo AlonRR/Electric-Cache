@@ -1,11 +1,28 @@
 <?php
-include 'connect_to_DB.php';
+include 'config.php';
+
 session_start();
-// Example usage: Assume you have received the user's submitted form data
-if (isset($_POST['username']) && isset($_POST['password'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    createSession($username, $password);
+
+if (!empty($_POST["username"])) {
+  $query = "SELECT * FROM tbl_211_users WHERE username='"
+    . $_POST["username"]
+    . "' and password='"
+    . $_POST["password"] . "'";
+
+  $result = mysqli_query($connection, $query);
+  $row = mysqli_fetch_array($result);
+
+  if (is_array($row)) {
+    $_SESSION["images"] = $row['images'];
+    $_SESSION["username"] = $row['username'];
+    $_SESSION["user_id"] = $row['user_id'];
+    $_SESSION["type_id"] = $row['type_id'];
+    $_SESSION["email"] = $row['email'];
+
+    header('Location: ./index.php');
+  } else {
+    $message = "Invalid UserName or Password!";
+  }
 }
 ?>
 

@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if (!(isset($_SESSION["user_id"]))) {
+    header("Location: login.php");
+}
+$user_id = $_SESSION["user_id"];
+include "config.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +34,8 @@
     <div class="container-fluid div1">
         <header class="container p-3 ms-0 me-0 mw-100 bg-2b2b2b fw-300">
             <nav class="navbar navbar-expand p-0 w-100">
-                <img src="images/freida-user.jpg" alt="user" class="userPic">
+                <img class="userPic" src=<?php echo '"' . $_SESSION["images"] . '"' ?> alt="User Image"
+                    data-bs-toggle="modal" data-bs-target="#imageModal" style="border-radius: 100% widht:4%">
                 <div class="row p-0">
                     <ul class="navbar-nav align-items-end fw-300 fs-30">
                         <li class="nav-item">
@@ -45,10 +56,10 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="#"> <!-- Added class: text-white -->
-                                <svg class = "batterySelected" xmlns="http://www.w3.org/2000/svg" height="0.875em"
+                                <svg class="batterySelected" xmlns="http://www.w3.org/2000/svg" height="0.875em"
                                     viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                                     <style>
-                                        .batterySelected{
+                                        .batterySelected {
                                             fill: #2196f3
                                         }
                                     </style>
@@ -59,7 +70,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="stats.html"> <!-- Added class: text-white -->
+                            <a class="nav-link text-white" href="stats.php"> <!-- Added class: text-white -->
                                 <svg xmlns="http://www.w3.org/2000/svg" height="0.875em"
                                     viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                                     <style>
@@ -74,7 +85,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" aria-current="page" href="objectPage.html">
+                            <a class="nav-link text-white" aria-current="page" href="templates.php">
                                 <!-- Added class: text-white -->
                                 <img src="images/Electric-Cache_Project_List_Alt_Icon_1.png" alt="">
                                 <!-- <i class="bi bi-table"></i> -->
@@ -97,12 +108,7 @@
                             <label class="form-check-label" for="flexSwitchCheckDefault"></label>
                         </div>
                         <h2>&nbsp;Set Recommended</h2>
-                        <p>The "recommended button" will initiate<br>
-                            a prediction program that will
-                            set the time and percentage for<br>
-                            charging and discharging.<br>
-                            This will help you save as much money and emissions as possible."
-                        </p>
+
                     </div>
 
                     <aside class="buttomSection">

@@ -13,7 +13,7 @@
     <link rel="icon" href="images/icon.ico">
 
 
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawVisualization);
@@ -27,9 +27,9 @@
           ['2006/07',  157,      1167,        587,             807,           397,      623],
           ['2007/08',  139,      1110,        615,             968,           215,      609.4],
           ['2008/09',  136,      691,         629,             1026,          366,      569.6]
-        ]);
+        ]); -->
 
-        var options = {
+        <!-- var options = {
           title : 'Monthly Coffee Production by Country',
           vAxis: {title: 'Cups'},
           hAxis: {title: 'Month'},
@@ -40,7 +40,7 @@
         var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
         chart.draw(data, options);
       }
-    </script>
+    </script> -->
 
 </head>
 
@@ -71,7 +71,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="battery.html">
+                        <a class="nav-link" href="battery.php">
                             <svg xmlns="http://www.w3.org/2000/svg" height="0.875em"
                                 viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                                 <style>
@@ -103,7 +103,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="objectPage.html">
+                        <a class="nav-link" aria-current="page" href="templates.php">
                             <img src="images/Electric-Cache_Project_List_Alt_Icon_1.png" alt="">
                             Template
                         </a>

@@ -1,12 +1,15 @@
 <?php
 session_start();
-if (isset($_SESSION['user_id'])) {
-    $user_id = $_SESSION['user_id'];
-    //   echo "Welcome, " . $username . "!";
-} else {
-    header("Location: login.php"); // Redirect to the login page if not logged in
-}
 
+if (!(isset($_SESSION["user_id"]))) {
+    header("Location: login.php");
+}
+$user_id = $_SESSION["user_id"];
+$img = $_SESSION["images"];
+$name = $_SESSION["username"];
+$user_type = $_SESSION["type_id"];
+$email = $_SESSION["email"];
+include "config.php";
 
 ?>
 
@@ -18,45 +21,27 @@ if (isset($_SESSION['user_id'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" type="text/css" href="#" />
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Nunito+Sans:wght@200&family=Rubik&display=swap"
         rel="stylesheet">
-    
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css">
+
     <link rel="icon" href="images/icon.ico">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <title>Electric-Cache</title>
 </head>
 
 <body class="body1">
     <div class="container-fluid div1">
-        <header class="container p-3 ms-0 me-0 mw-100 bg-2b2b2b fw-300">
+        <header class="container p-3 ms-0 me-0 mw-100 bg-2b2b2b fw-300" style="display: flex">
             <nav class="navbar navbar-expand p-0 w-100">`
-                <div class="modal" tabindex="-1">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title">Modal title</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                aria-label="Close"></button>
-                            </div>
-                            <img src="images/freida-user.jpg" alt="user" class="userPic">
-                            <div class="modal-body">
-                                <p>Modal body text goes here.</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="row p-0">
                     <ul class="navbar-nav align-items-end fw-300 fs-30">
                         <li class="nav-item">
@@ -68,16 +53,18 @@ if (isset($_SESSION['user_id'])) {
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="index.php"> <!-- Added class: text-white -->
+                            <a class="nav-link active" href="index.php">
+                                <!-- Added class: text-white -->
                                 <img src="images/Electric-Cache_Project_Home_Icon_1_selected.png"
                                     alt="Electric-Cache_Project_Home_Icon_1.png">
                                 Home
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="battery.html"> <!-- Added class: text-white -->
-                                <svg xmlns="http://www.w3.org/2000/svg" height="0.875em"
-                                    viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <a class="nav-link text-white" href="battery.php">
+                                <!-- Added class: text-white -->
+                                <svg xmlns="http://www.w3.org/2000/svg" height="0.875em" viewBox="0 0 512 512">
+                                    <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                                     <style>
                                         svg {
                                             fill: #f5f5f5
@@ -90,9 +77,10 @@ if (isset($_SESSION['user_id'])) {
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="stats.html"> <!-- Added class: text-white -->
-                                <svg xmlns="http://www.w3.org/2000/svg" height="0.875em"
-                                    viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <a class="nav-link text-white" href="stats.php">
+                                <!-- Added class: text-white -->
+                                <svg xmlns="http://www.w3.org/2000/svg" height="0.875em" viewBox="0 0 448 512">
+                                    <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                                     <style>
                                         svg {
                                             fill: #f5f5f5
@@ -105,7 +93,7 @@ if (isset($_SESSION['user_id'])) {
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active text-white" aria-current="page" href="listPage.html">
+                            <a class="nav-link active text-white" aria-current="page" href="templates.php">
                                 <img src="images/Electric-Cache_Project_List_Alt_Icon_1.png" alt="">
                                 Template
                             </a>
@@ -113,10 +101,86 @@ if (isset($_SESSION['user_id'])) {
                     </ul>
                 </div>
             </nav>
+            <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content" style="background-color: #3b3b3b">
+                        <div class="modal-header">
+                            <img src="<?php echo $_SESSION["images"] ?>" alt="User Image" class="img-fluid userImage userPic">
+                            <button class="btn btn-secondary" id="edit-btn" style="color: white">
+                                <i class="bi bi-pencil-fill"></i>
+                                Edit
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div id="viewMode">
+                                <h2>
+                                    Username:
+                                </h2>
+                                <h3 id="view-username" style="color: #c5c5c5">
+                                    <?php $sql = "SELECT username FROM tbl_211_users WHERE user_id = $user_id";
+                                    $result = mysqli_query($connection, $sql);
+                                    if (mysqli_num_rows($result) > 0) {
+                                        $row = mysqli_fetch_assoc($result); // Fetch the associative array                                
+                                        echo $row['username'];
+                                    } else {
+                                        echo "There is no such email";
+                                    }
+                                    ?>
+                                </h3>
+                                <h2>
+                                    Email:
+                                </h2>
+                                <h3 id="view-username" style="color: #c5c5c5">
+                                    <?php $sql = "SELECT email FROM tbl_211_users WHERE user_id = $user_id";
+                                    $result = mysqli_query($connection, $sql);
+                                    if (mysqli_num_rows($result) > 0) {
+                                        $row = mysqli_fetch_assoc($result); // Fetch the associative array                                
+                                        echo $row['email'];
+                                    } else {
+                                        echo "There is no such email";
+                                    }
+                                    ?>
+                                </h3>
+                            </div>
+                            <!-- <div id="editMode"> -->
+                            <form id="editMode" style="display: none;" method="post" action="insertData.php">
+                                <div class="mb-3">
+                                    <label>Username:</label>
+                                    <input type="text" name='username' class="form-control" id="edit-username" value="<?php $sql = "SELECT username FROM tbl_211_users WHERE user_id = $user_id";
+                                    $result = mysqli_query($connection, $sql);
+                                    if (mysqli_num_rows($result) > 0) {
+                                        $row = mysqli_fetch_assoc($result); // Fetch the associative array                                
+                                        echo $row['username'];
+                                    } else {
+                                        echo "There is no such email";
+                                    } ?>
+                                    ">
+                                </div>
+                                <div class="mb-3">
+                                    <label>Email:</label>
+                                    <input type="text" name='email' class="form-control" id="edit-email" value="<?php $sql = "SELECT email FROM tbl_211_users WHERE user_id = $user_id";
+                                    $result = mysqli_query($connection, $sql);
+                                    if (mysqli_num_rows($result) > 0) {
+                                        $row = mysqli_fetch_assoc($result); // Fetch the associative array                                
+                                        echo $row['email'];
+                                    } else {
+                                        echo "There is no such email";
+                                    }
+                                    ?>">
+                                </div>
+                                <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
+                                <button type="submit" class="btn btn-primary" id="save-btn">Save</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img class="userPic" src=<?php echo '"' . $_SESSION["images"] . '"' ?> alt="User Image"
+                data-bs-toggle="modal" data-bs-target="#imageModal" style="border-radius: 100% widht:4%">
         </header>
 
         <div class="row div1">
-
             <main class="col-lg-12 main1">
 
                 <section class="leftSection">
@@ -134,7 +198,7 @@ if (isset($_SESSION['user_id'])) {
                         </p>
                     </div>
 
-                    <aside class="buttomSection">
+                    <!-- <aside class="buttomSection">
 
                         <div class="mapInnerWrap div1">
                             <div class="actualMap div1">
@@ -143,22 +207,13 @@ if (isset($_SESSION['user_id'])) {
                                     style="border:0;" allowfullscreen="" loading="lazy"
                                     referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
-                            <h2 id="favorites">Favorites</h2>
-                            <div class="TLVbusDepot div1">&nbsp;
+                            <h2 class="favorites">Favorites</h2>
+                            <div id="locationsContainer"></div>
 
-                                <h3>&nbsp;TLV bus depot</h3>
-                                <h4>&nbsp;&nbsp;23 HaDag, Tel-Aviv, Israel
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        class="bi bi-sign-turn-slight-right-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M6.95.435c.58-.58 1.52-.58 2.1 0l6.515 6.516c.58.58.58 1.519 0 2.098L9.05 15.565c-.58.58-1.519.58-2.098 0L.435 9.05a1.482 1.482 0 0 1 0-2.098L6.95.435Zm1.385 6.547.8 1.386a.25.25 0 0 0 .451-.039l1.06-2.882a.25.25 0 0 0-.192-.333l-3.026-.523a.25.25 0 0 0-.26.371l.667 1.154-.621.373A2.5 2.5 0 0 0 6 8.632V11h1V8.632a1.5 1.5 0 0 1 .728-1.286l.607-.364Z" />
-                                    </svg>
-                                </h4>
-
-                            </div>
+                    
                         </div>
 
-                    </aside>
+                    </aside> -->
 
                     <div class="map div1">
                         <div class="mapInnerWrap div1">
@@ -168,8 +223,9 @@ if (isset($_SESSION['user_id'])) {
                                     style="border:0;" allowfullscreen="" loading="lazy"
                                     referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
-                            <h2 class="favorites">Favorites</h2>
-                            <div class="TLVbusDepot div1">&nbsp;
+                            <h2>Favorites</h2>
+                            <div id="locationsContainer"></div>
+                            <!-- <div class="TLVbusDepot div1">&nbsp;
 
                                 <h3>&nbsp;TLV bus depot</h3>
                                 <h4>&nbsp;&nbsp;23 HaDag, Tel-Aviv, Israel
@@ -178,9 +234,9 @@ if (isset($_SESSION['user_id'])) {
                                         <path
                                             d="M6.95.435c.58-.58 1.52-.58 2.1 0l6.515 6.516c.58.58.58 1.519 0 2.098L9.05 15.565c-.58.58-1.519.58-2.098 0L.435 9.05a1.482 1.482 0 0 1 0-2.098L6.95.435Zm1.385 6.547.8 1.386a.25.25 0 0 0 .451-.039l1.06-2.882a.25.25 0 0 0-.192-.333l-3.026-.523a.25.25 0 0 0-.26.371l.667 1.154-.621.373A2.5 2.5 0 0 0 6 8.632V11h1V8.632a1.5 1.5 0 0 1 .728-1.286l.607-.364Z" />
                                     </svg>
-                                </h4>
+                                </h4> -->
 
-                            </div>
+                            <!-- </div> -->
                         </div>
                     </div>
                 </section>
@@ -214,51 +270,41 @@ if (isset($_SESSION['user_id'])) {
                         <h2>Savings</h2>
                         <canvas id="myChart2" width="900" height="400"></canvas>
                     </div>
-
                     <div class="templatesMobile div1">
-                        <form class="d-flex" role="search" name="TemplateNameIndex">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        </form>
+                        <div class="templates div1">
+                            <form class="d-flex" role="search" value="TemplateName">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
 
-                        <div class="template">
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" role="switch"
-                                    id="flexSwitchCheckDefault">
-                                <label class="form-check-label" for="flexSwitchCheckDefault"></label>
-                            </div>
-                            <h4>Night busses</h4>
-                        </div>
+                            </form>
 
-                        <div class="template">
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" role="switch"
-                                    id="flexSwitchCheckDefault">
-                                <label class="form-check-label" for="flexSwitchCheckDefault"></label>
-                            </div>
-                            <h4>Saturday off</h4>
-                        </div>
+                            <?php
+                            $sql = 'SELECT t.template_name, t.battery_level, t.start_time, t.end_time, t.template_repeat
+                            FROM tbl_211_templates t WHERE t.user_id = "' . $user_id . '"';
+                            $result = mysqli_query($connection, $sql);
+                            if ($result) {
+                                $row = mysqli_fetch_assoc($result);
+                            } else
+                                die("DB query failed.");
 
-                        <div class="template">
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" role="switch"
-                                    id="flexSwitchCheckDefault">
-                                <label class="form-check-label" for="flexSwitchCheckDefault"></label>
-                            </div>
-                            <h4>Friday off</h4>
-                        </div>
+                            while ($row = $result->fetch_assoc()) {
+                                echo '<div class="template d-flex">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch"
+                                        id="flexSwitchCheckDefault">
+                                    <label class="form-check-label" for="flexSwitchCheckDefault"></label></div>';
+                                echo '<div class=templateInfo>';
+                                echo $row['template_name'];
+                                echo "<br>";
+                                echo $row['start_time'];
+                                echo "-";
+                                echo $row['end_time'];
+                                echo "<br>";
+                                echo $row['template_repeat'];
+                                echo '</div></div>';
+                            }
+                            ?>
 
-                        <div class="template">
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" role="switch"
-                                    id="flexSwitchCheckDefault">
-                                <label class="form-check-label" for="flexSwitchCheckDefault"></label>
-                            </div>
-                            <h4>Reserve busses</h4>
                         </div>
-                        <button class="customize2"> <img src="images/Electric-Cache_Project_Create_Icon_1.png"
-                                alt="template" width="12" height="12">
-                            Customize</button>
-                    </div>
                 </section>
 
                 <section class="rightSection">
@@ -266,11 +312,13 @@ if (isset($_SESSION['user_id'])) {
                         <h5>&nbsp;How much CO2 is emmited?</h5>
                         <h6>According to the SMMT New Car Report 2017, UK cars:</h6>
                         <ul>
-                            <li>Emmited 68.5 MtCO2e (Metric tons of carbon dioxide equivalent)" during 2016 - that's the
+                            <li>Emmited 68.5 MtCO2e (Metric tons of carbon dioxide equivalent)" during 2016 - that's
+                                the
                                 same amount</li>
                             <li>The average new car amits 120.1g/km of CO2</li>
                             <li>CO2 emmisions from cars has dropped by 8.9% between 2000 and 2015</li>
-                            <li>Total CO2 emmisions from all vehicles currently on the road has fallen by 4.6% between
+                            <li>Total CO2 emmisions from all vehicles currently on the road has fallen by 4.6%
+                                between
                                 2000 - 2015</li>
                         </ul>
 
@@ -281,59 +329,51 @@ if (isset($_SESSION['user_id'])) {
 
                         </form>
 
-                        <div class="template">
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" role="switch"
-                                    id="flexSwitchCheckDefault">
-                                <label class="form-check-label" for="flexSwitchCheckDefault"></label>
-                            </div>
-                            <h4>Night busses</h4>
-                            <h6>22:00 till 6:00 next day Daily</h6>
-                        </div>
+                        <?php
+                        $sql = "SELECT t.template_name, t.battery_level, t.start_time, t.end_time, t.template_repeat
+                        FROM tbl_211_templates t
+                        WHERE t.user_id =" . $user_id;
+                        ?>
 
-                        <div class="template">
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" role="switch"
-                                    id="flexSwitchCheckDefault">
-                                <label class="form-check-label" for="flexSwitchCheckDefault"></label>
-                            </div>
-                            <h4>Saturday off</h4>
-                            <h6>00:00 till 1:00 before Sunset Weekley Sat</h6>
-                        </div>
+                        <?php
+                        $result = mysqli_query($connection, $sql);
+                        if ($result) {
+                            $row = mysqli_fetch_assoc($result);
+                        } else
+                            die("DB query failed.");
 
-                        <div class="template">
+                        while ($row = $result->fetch_assoc()) {
+                            echo '<div class="template d-flex">
                             <div class="form-check form-switch">
                                 <input class="form-check-input" type="checkbox" role="switch"
                                     id="flexSwitchCheckDefault">
-                                <label class="form-check-label" for="flexSwitchCheckDefault"></label>
-                            </div>
-                            <h4>Friday off</h4>
-                            <h6>Sunset till day end Weekley Fri</h6>
-                        </div>
+                                <label class="form-check-label" for="flexSwitchCheckDefault"></label></div>';
+                            echo '<div class=templateInfo>';
+                            echo $row['template_name'];
+                            echo "<br>";
+                            echo $row['start_time'];
+                            echo "-";
+                            echo $row['end_time'];
+                            echo "<br>";
+                            echo $row['template_repeat'];
+                            echo '</div></div>';
+                        }
+                        ?>
 
-                        <div class="template">
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" role="switch"
-                                    id="flexSwitchCheckDefault">
-                                <label class="form-check-label" for="flexSwitchCheckDefault"></label>
-                            </div>
-                            <h4>Reserve busses</h4>
-                            <h6>6:00 till 7:00 Daily</h6>
-                        </div>
-                        <button class="customize"> <img src="images/Electric-Cache_Project_Create_Icon_1.png"
-                                alt="template" width="12" height="12">
-                            Customize</button>
                     </div>
-                </section>
-
-            </main>
+                    <button class="customize"> <img src="images/Electric-Cache_Project_Create_Icon_1.png" alt="template"
+                            width="12" height="12">
+                        Customize</button>
         </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Wz0tgW8h9KvhTV8j1HfSwrI+U2BMQ57uIK2vWlu3XCdHH5+soXYV8sBKN7/lfnNM"
-        crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+        </section>
+
+        </main>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script> -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"></script> -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> -->
+        <script type="module" src="js/script.js" defer></script>
 
 </body>
 

@@ -1,0 +1,50 @@
+{
+    "locations": [
+      {
+        "name": "TLV bus depot",
+        "address": {
+          "number": "23",
+          "streetName": "HaDag",
+          "city": "Tel-Aviv",
+          "state": "Israel"
+        }
+      },
+      {
+        "name": "Jerusalem Central Station",
+        "address": {
+          "number": "15",
+          "streetName": "Jaffa Road",
+          "city": "Jerusalem",
+          "state": "Israel"
+        }
+      },
+      {
+        "name": "Eilat Marina",
+        "address": {
+          "number": "12",
+          "streetName": "Marina Boulevard",
+          "city": "Eilat",
+          "state": "Israel"
+        }
+      },
+      {
+        "name": "Haifa Train Station",
+        "address": {
+          "number": "89",
+          "streetName": "Railway Street",
+          "city": "Haifa",
+          "state": "Israel"
+        }
+      },
+      {
+        "name": "Beersheba Mall",
+        "address": {
+          "number": "7",
+          "streetName": "Market Lane",
+          "city": "Beersheba",
+          "state": "Israel"
+        }
+      }
+    ]
+  }
+  
